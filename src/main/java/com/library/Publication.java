@@ -2,16 +2,14 @@ package com.library;
 
 public class Publication {
     private String name;
-    private int countPage;
+    private int countPages;
 
-    public Publication(String name, int countPage) {
+    public Publication(String name, int countPages) {
         this.name = name;
-        this.countPage = countPage;
+        this.countPages = countPages;
     }
 
-    @Override
-    public String toString() {
-        return "name='" + this.name +
-                ", countPage=" + this.countPage;
+    public String print() {
+        return "name =" + this.name + ", count pages" + this.countPages;
     }
 }
