@@ -9,7 +9,7 @@ public class Publication {
         this.countPages = countPages;
     }
 
-    public String print(){
-        return "name=" + this.name + ",countPages=" + this.countPages;
+    public String print() {
+        return "name =" + this.name + ", count pages" + this.countPages;
     }
 }
