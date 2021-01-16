@@ -27,6 +27,11 @@ public class Library {
         printPublications(new Publication[]{new Book("Master & Margarita", 300, "Mikhail Bulgakov"), null,
                 new Journal("Gamer", 101, 10, 2018)});
 
+        DataStorage dataStorage = new DataStorage(1);
+        dataStorage.addPublication(new Journal("PC", 100, 1, 2021));
+        dataStorage.addPublication(new Journal("PC", 100, 1, 2021));
+        dataStorage.addPublication(new Journal("PC", 100, 1, 2021));
+
 
     }
 
