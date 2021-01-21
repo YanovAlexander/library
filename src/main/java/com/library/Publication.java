@@ -10,6 +10,6 @@ public class Publication {
     }
 
     public String print() {
-        return "name= " + this.name + ",countPages= " + this.countPages;
+        return "name =" + this.name + ", count pages" + this.countPages;
     }
 }
