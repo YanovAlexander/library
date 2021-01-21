@@ -12,4 +12,6 @@ public class Book extends Publication {
     public String print() {
         return "Book{" + super.print() + ", author= " + this.author + "}";
     }
+
+
 }

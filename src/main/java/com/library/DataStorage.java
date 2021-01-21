@@ -29,4 +29,19 @@ public class DataStorage {
         size = size * 2;
         publications = Arrays.copyOf(this.publications, size);
     }
+
+    public void remove(Publication publication){
+        for (int i = 0; i < publications.length; i++) {
+            if(publications[i] != null) {
+                if (publications[i].equals(publication)) {
+                    publications[i] = null;
+                }
+            }
+
+        }
+    }
+
+    public Publication[] findAll(){
+        return publications;
+    }
 }
