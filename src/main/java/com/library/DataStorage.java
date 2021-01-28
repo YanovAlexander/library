@@ -5,20 +5,21 @@ import java.util.Arrays;
 public class DataStorage {
     private Publication[] publications;
     private final static int DEFAULT_SIZE = 16;
-    private int size;
-    private int cursor = 0;
+    //private int size;
+    private int cursor;
 
     public DataStorage() {
         this(DEFAULT_SIZE);
     }
 
     public DataStorage(int size) {
-        this.size = size;
-        this.publications = new Publication[this.size];
+        //this.size = size;
+        this.publications = new Publication[size];
+        cursor = 0;
     }
 
     public void addPublication(Publication publication) {
-        if (cursor >= size) {
+        if (cursor == publications.length) {
             increaseDataStorage();
         }
         publications[cursor] = publication;
@@ -26,8 +27,11 @@ public class DataStorage {
     }
 
     private void increaseDataStorage() {
-        size = size * 2;
-        publications = Arrays.copyOf(this.publications, size);
+        //size = size * 2;
+        publications = Arrays.copyOf(this.publications, publications.length*2);
+    }
+    public Publication[] getPublications(){
+        return this.publications;
     }
 
     public void remove(Publication publication){
