@@ -1,6 +1,6 @@
 package com.library;
 
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class Application {
@@ -14,14 +14,15 @@ public class Application {
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
+
             String input = scanner.nextLine();
             if (input.equalsIgnoreCase("help")) {
                 System.out.println("Введите  help, чтобы увидеть список всех доступных команд.");
-                System.out.println("Введите команду add help, чтобы добавить новую книгу в хранилище");
                 System.out.println("Введите exit для выхода из программы.");
+                System.out.println("Введите add_book , чтобы добавить книгу в библиотеку");
             } else if (input.equalsIgnoreCase("exit")) {
                 break;
-            } else if (input.equalsIgnoreCase("add book")) {
+            } else if (input.equalsIgnoreCase("add_book")) {
                 addBookToDataStorage(scanner, dataStorage);
             } else {
                 System.out.println("Такой команды нет в списке, пожалуйста, повторите ввод.");
@@ -31,23 +32,20 @@ public class Application {
     }
 
     private static void addBookToDataStorage(Scanner scanner, DataStorage dataStorage) {
-        System.out.println("Введите название книги");
+        System.out.println("Введите название книги:");
         String bookName = scanner.nextLine();
-        System.out.println("Введите автора книги");
-        String author = scanner.nextLine();
+        System.out.println("Ввкдите количество страниц: ");
         int pagesCount = 0;
-        while (true) {
-            try {
-                System.out.println("Введите количество страниц");
-                pagesCount = Integer.parseInt(scanner.nextLine());
-                break;
-            } catch (Exception e) {
-               System.out.println("Вы ввели не целое число страниц, введите верное количество страниц.");
-                continue;
-            }
+        try {
+            pagesCount = Integer.parseInt(scanner.nextLine());
+        } catch (Exception e){
+            System.out.println("Введите число страниц: ");
+            pagesCount = Integer.parseInt(scanner.nextLine());
         }
-        dataStorage.addPublication(new Book(bookName, pagesCount, author));
-        System.out.println("Книга успешно добавлена");
-
+        System.out.println("Введите имя автора: ");
+        String author = scanner.nextLine();
+        Book book = new Book(bookName, pagesCount, author);
+        dataStorage.addPublication(book);
+        System.out.println("Ваша книга добавлена");
     }
 }
