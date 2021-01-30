@@ -8,7 +8,7 @@ public class Application {
 
     public static void main(String[] args) {
 
-        DataStorage dataStorage = new DataStorage();
+        DataStorage dataStorage = new InMemoryDataStorage();
 
         System.out.println("Добро пожаловать в библиотеку.  Введите команду help  для получения списка доступных команд.");
 
@@ -34,13 +34,16 @@ public class Application {
     private static void addBookToDataStorage(Scanner scanner, DataStorage dataStorage) {
         System.out.println("Введите название книги:");
         String bookName = scanner.nextLine();
-        System.out.println("Ввкдите количество страниц: ");
+        boolean isFieldBlank = true;
         int pagesCount = 0;
-        try {
-            pagesCount = Integer.parseInt(scanner.nextLine());
-        } catch (Exception e){
-            System.out.println("Введите число страниц: ");
-            pagesCount = Integer.parseInt(scanner.nextLine());
+        while (isFieldBlank) {
+            try {
+                System.out.println("Введите количество страниц: ");
+                pagesCount = Integer.parseInt(scanner.nextLine());
+                isFieldBlank = false;
+            } catch (Exception e) {
+                System.out.println("Вы ввели не целое число страниц, введите верное количество страниц.");
+            }
         }
         System.out.println("Введите имя автора: ");
         String author = scanner.nextLine();
