@@ -3,7 +3,6 @@ package com.library.controller;
 import com.library.command.Command;
 import com.library.command.Help;
 import com.library.model.DataStorage;
-import com.library.model.InMemoryDataStorage;
 import com.library.model.entity.Book;
 import com.library.view.View;
 
@@ -16,34 +15,35 @@ public class MainController {
     private View view;
     private List<Command> commands;
 
-    public MainController(DataStorage storage, View view) {
+    public MainController(DataStorage dataStorage, View view) {
         this.view = view;
-        this.commands = new ArrayList<>(Arrays.asList(new Help(view)));
+        this.commands = new ArrayList<>(Arrays.asList(
+                new Help(view)
+        ));
     }
 
     public void run() {
-        view.write("Добро пожаловать в библиотеку. Введите команду help  для получения списка доступных команд.");
+        view.write("Добро пожаловать в библиотеку.");
+        view.write("Введите команду help  для получения списка доступных команд.");
         doCommand();
-
     }
 
-    private void doCommand(){
-        while (true){
+    private void doCommand() {
+        while (true) {
             String inputCommand = view.read();
-            for(Command command : commands){
-                if(command.canProcess(inputCommand)){
+            for (Command command : commands) {
+                if (command.canProcess(inputCommand)) {
                     command.process();
                     break;
                 }
             }
-
         }
     }
 
-    /*public void run(){
-        DataStorage dataStorage = new InMemoryDataStorage();
 
-        System.out.println("Добро пожаловать в библиотеку.  Введите команду help  для получения списка доступных команд.");
+
+    /*
+     System.out.println("Добро пожаловать в библиотеку.  Введите команду help  для получения списка доступных команд.");
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -62,7 +62,8 @@ public class MainController {
             }
         }
         scanner.close();
-    }
+     */
+
     private static void addBookToDataStorage(Scanner scanner, DataStorage dataStorage) {
         System.out.println("Введите название книги:");
         String bookName = scanner.nextLine();
@@ -82,5 +83,5 @@ public class MainController {
         Book book = new Book(bookName, pagesCount, author);
         dataStorage.addPublication(book);
         System.out.println("Ваша книга добавлена");
-    }*/
+    }
 }

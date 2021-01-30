@@ -3,6 +3,7 @@ package com.library.view;
 import java.util.Scanner;
 
 public class Console implements View {
+
     private Scanner scanner;
 
     public Console() {
