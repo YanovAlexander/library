@@ -1,6 +1,4 @@
-package com.library;
-
-import java.util.Objects;
+package com.library.model.entity;
 
 public class Publication {
     private String name;

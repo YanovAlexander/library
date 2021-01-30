@@ -1,4 +1,6 @@
-package com.library;
+package com.library.model;
+
+import com.library.model.entity.Publication;
 
 import java.util.Arrays;
 
