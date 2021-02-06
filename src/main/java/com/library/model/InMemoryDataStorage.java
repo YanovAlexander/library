@@ -6,9 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InMemoryDataStorage implements DataStorage {
-    List<Publication> publications;
+    private List<Publication> publications;
     private final static int DEFAULT_SIZE = 16;
-
 
     public InMemoryDataStorage() {
         this(DEFAULT_SIZE);
@@ -20,16 +19,16 @@ public class InMemoryDataStorage implements DataStorage {
 
     @Override
     public void addPublication(Publication publication) {
-        publications.add(publication);
+        this.publications.add(publication);
     }
 
     @Override
     public void remove(Publication publication) {
-        publications.remove(publication);
+        this.publications.remove(publication);
     }
 
     @Override
-    public List<Publication> findAll() {
+    public List <Publication> findAll() {
         return publications;
     }
 }
