@@ -1,15 +1,14 @@
 package com.library.controller;
 
+import com.library.command.AddBook;
 import com.library.command.Command;
 import com.library.command.Help;
 import com.library.model.DataStorage;
-import com.library.model.entity.Book;
 import com.library.view.View;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class MainController {
     private View view;
@@ -18,7 +17,7 @@ public class MainController {
     public MainController(DataStorage dataStorage, View view) {
         this.view = view;
         this.commands = new ArrayList<>(Arrays.asList(
-                new Help(view)
+                new Help(view), new AddBook(view, dataStorage)
         ));
     }
 
@@ -64,24 +63,5 @@ public class MainController {
         scanner.close();
      */
 
-    private static void addBookToDataStorage(Scanner scanner, DataStorage dataStorage) {
-        System.out.println("Введите название книги:");
-        String bookName = scanner.nextLine();
-        boolean isFieldBlank = true;
-        int pagesCount = 0;
-        while (isFieldBlank) {
-            try {
-                System.out.println("Введите количество страниц: ");
-                pagesCount = Integer.parseInt(scanner.nextLine());
-                isFieldBlank = false;
-            } catch (Exception e) {
-                System.out.println("Вы ввели не целое число страниц, введите верное количество страниц.");
-            }
-        }
-        System.out.println("Введите имя автора: ");
-        String author = scanner.nextLine();
-        Book book = new Book(bookName, pagesCount, author);
-        dataStorage.addPublication(book);
-        System.out.println("Ваша книга добавлена");
-    }
+
 }
