@@ -2,13 +2,14 @@ package com.library.command;
 
 import com.library.model.DataStorage;
 import com.library.model.entity.Book;
+import com.library.model.entity.Publication;
 import com.library.view.View;
 
 public class AddBook implements Command{
     private View view;
-    private DataStorage dataStorage;
+    private DataStorage<Publication> dataStorage;
 
-    public AddBook(View view, DataStorage dataStorage) {
+    public AddBook(View view, DataStorage<Publication> dataStorage) {
         this.view = view;
         this.dataStorage = dataStorage;
     }
@@ -23,7 +24,7 @@ public class AddBook implements Command{
         return "add_book";
     }
 
-    private void addBookToDataStorage(DataStorage dataStorage) {
+    private void addBookToDataStorage(DataStorage<Publication> dataStorage) {
         view.write("Введите название книги:");
         String bookName = view.read();
         boolean isFieldBlank = true;
