@@ -23,16 +23,21 @@ public class MainController {
 
     public void run() {
         view.write("Добро пожаловать в библиотеку.");
-        view.write("Введите команду help  для получения списка доступных команд.");
         doCommand();
     }
 
     private void doCommand() {
-        while (true) {
+        boolean isNotExit = true;
+        while (isNotExit) {
+            view.write("Введите команду help  для получения списка доступных команд.");
             String inputCommand = view.read();
             for (Command command : commands) {
                 if (command.canProcess(inputCommand)) {
                     command.process();
+                    break;
+                } else if (inputCommand.equalsIgnoreCase("exit")) {
+                    view.write("Сессия окончена. Вы покидаете библиотеку.");
+                    isNotExit = false;
                     break;
                 }
             }
