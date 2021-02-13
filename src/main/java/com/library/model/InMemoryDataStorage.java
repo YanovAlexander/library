@@ -5,8 +5,8 @@ import com.library.model.entity.Publication;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InMemoryDataStorage<T extends Publication> implements DataStorage<T> {
-    private List<T> publications;
+public class InMemoryDataStorage implements DataStorage {
+    private List<Publication> publications;
     private final static int DEFAULT_CAPACITY = 16;
 
     public InMemoryDataStorage() {
@@ -18,17 +18,17 @@ public class InMemoryDataStorage<T extends Publication> implements DataStorage<T
     }
 
     @Override
-    public void addPublication(T publication) {
+    public void addPublication(Publication publication) {
         this.publications.add(publication);
     }
 
     @Override
-    public void remove(T publication) {
+    public void remove(Publication publication) {
         this.publications.remove(publication);
     }
 
     @Override
-    public List <T> findAll() {
+    public List<Publication> findAll() {
         return publications;
     }
 }
