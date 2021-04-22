@@ -5,8 +5,8 @@ import java.util.Objects;
 public class Book extends Publication {
     private String author;
 
-    public Book(String name, int countPages, String author) {
-        super(name, countPages);
+    public Book(String name, int countPages, String author, int publicationYear) {
+        super(name, countPages, publicationYear);
         this.author = author;
     }
 

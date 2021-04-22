@@ -4,17 +4,15 @@ import java.util.Objects;
 
 public class Journal extends Publication {
     private int number;
-    private int publicationYear;
 
     public Journal(String name, int countPages, int number, int publicationYear) {
-        super(name, countPages);
+        super(name, countPages, publicationYear);
         this.number = number;
-        this.publicationYear = publicationYear;
     }
 
     @Override
     public String print() {
-        return "Journal{" + super.print() + ", number=" + this.number + ", year=" + this.publicationYear + "}";
+        return "Journal{" + super.print() + ", number=" + this.number + "}";
     }
 
     @Override
@@ -23,11 +21,11 @@ public class Journal extends Publication {
         if (!(o instanceof Journal)) return false;
         if (!super.equals(o)) return false;
         Journal journal = (Journal) o;
-        return number == journal.number && publicationYear == journal.publicationYear;
+        return number == journal.number;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(number, publicationYear);
+        return Objects.hash(number);
     }
 }
