@@ -10,7 +10,7 @@ public class Publication {
     }
 
     public String print() {
-        return "name =" + this.name + ", count pages" + this.countPages;
+        return "name=" + this.name + ", count pages=" + this.countPages;
     }
 
     @Override

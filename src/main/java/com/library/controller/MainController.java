@@ -2,6 +2,7 @@ package com.library.controller;
 
 import com.library.command.AddBook;
 import com.library.command.Command;
+import com.library.command.FindAll;
 import com.library.command.Help;
 import com.library.model.DataStorage;
 import com.library.view.View;
@@ -17,7 +18,7 @@ public class MainController {
     public MainController(DataStorage dataStorage, View view) {
         this.view = view;
         this.commands = new ArrayList<>(Arrays.asList(
-                new Help(view), new AddBook(view, dataStorage)
+                new Help(view), new AddBook(view, dataStorage), new FindAll(view, dataStorage)
         ));
     }
 
@@ -43,30 +44,4 @@ public class MainController {
             }
         }
     }
-
-
-
-    /*
-     System.out.println("Добро пожаловать в библиотеку.  Введите команду help  для получения списка доступных команд.");
-
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-
-            String input = scanner.nextLine();
-            if (input.equalsIgnoreCase("help")) {
-                System.out.println("Введите  help, чтобы увидеть список всех доступных команд.");
-                System.out.println("Введите exit для выхода из программы.");
-                System.out.println("Введите add_book , чтобы добавить книгу в библиотеку");
-            } else if (input.equalsIgnoreCase("exit")) {
-                break;
-            } else if (input.equalsIgnoreCase("add_book")) {
-                addBookToDataStorage(scanner, dataStorage);
-            } else {
-                System.out.println("Такой команды нет в списке, пожалуйста, повторите ввод.");
-            }
-        }
-        scanner.close();
-     */
-
-
 }

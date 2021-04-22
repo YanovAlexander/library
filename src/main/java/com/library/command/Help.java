@@ -15,6 +15,7 @@ public class Help implements Command {
         view.write("help - список всех доступных команд.");
         view.write("exit - выход из программы.");
         view.write("add_book - добавление книги в библиотеку");
+        view.write("find_all - вывести все книги из библиотеки");
     }
 
     @Override
