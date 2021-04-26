@@ -12,10 +12,10 @@ public class Help implements Command {
 
     @Override
     public void process() {
-        view.write("help - список всех доступных команд.");
-        view.write("exit - выход из программы.");
-        view.write("add_book - добавление книги в библиотеку");
-        view.write("find_all - вывести все книги из библиотеки");
+        view.write("help - show a list of commands");
+        view.write("exit - exit from an application");
+        view.write("add_book - add book to library");
+        view.write("find_all - show the list of publications");
     }
 
     @Override
