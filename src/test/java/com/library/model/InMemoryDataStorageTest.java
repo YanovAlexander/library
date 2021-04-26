@@ -43,4 +43,12 @@ public class InMemoryDataStorageTest {
         assertThrows("Publication can't be null", DataStorageException.class,
                 () -> dataStorage.addPublication(expected));
     }
+
+    @Test
+    public void testEquals_happyPath() {
+        Book actual = new Book("Concurrency in practice", 800, "Brian Goetz", 2010);
+        Book expected = new Book("Concurrency in practice", 800, "Brian Goetz", 2010);
+
+        assertEquals(actual, expected);
+    }
 }
