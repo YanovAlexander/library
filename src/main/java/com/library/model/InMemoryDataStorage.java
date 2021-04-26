@@ -1,9 +1,11 @@
 package com.library.model;
 
+import com.library.exceptions.DataStorageException;
 import com.library.model.entity.Publication;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class InMemoryDataStorage implements DataStorage {
     private List<Publication> publications;
@@ -19,6 +21,10 @@ public class InMemoryDataStorage implements DataStorage {
 
     @Override
     public void addPublication(Publication publication) {
+        if (Objects.isNull(publication)) {
+            throw new DataStorageException("Publication can't be null");
+        }
+
         this.publications.add(publication);
     }
 
