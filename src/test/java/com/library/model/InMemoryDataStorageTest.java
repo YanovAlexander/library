@@ -51,4 +51,17 @@ public class InMemoryDataStorageTest {
 
         assertEquals(actual, expected);
     }
+
+    @Test
+    public void testShouldRemovePublication_happyPath(){
+        Book actual = new Book("Concurrency in practice", 800, "Brian Goetz", 2010);
+        dataStorage.addPublication(actual);
+        dataStorage.remove(actual);
+        assertEquals(0, dataStorage.findAll().size());
+    }
+    @Test
+    public void testShouldRemovePublication_whenPublicationIsNull(){
+        assertThrows("Publication can't be null", DataStorageException.class,
+                ()-> dataStorage.remove(null));
+    }
 }
