@@ -2,6 +2,7 @@ package com.library.it;
 
 import com.library.Application;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -45,6 +46,126 @@ public class IntegrationTest {
                 "exit - exit from an application\n" +
                 "add_book - add book to library\n" +
                 "find_all - show the list of publications\n" +
+                "Please enter a command or help to retrieve command list\n" +
+                "Good Bye!\n", getActualResult());
+    }
+
+    @Test
+    public void testAddBookCommand_happyPath(){
+        //given
+        in.add("add_book");
+        in.add("Master i Margarita");
+        in.add("294");
+        in.add("Mickail Bulgakov");
+        in.add("1968");
+        in.add("exit");
+
+        //when
+        Application.main(new String[0]);
+
+        //then
+        Assert.assertEquals("Welcome to the library\n" +
+                "Please enter a command or help to retrieve command list\n" +
+                "Enter the book name:\n" +
+                "Enter number of pages: \n" +
+                "Author's name: \n" +
+                "Enter the publication's year: \n" +
+                "The book Master i Margarita added successfully\n" +
+                "Please enter a command or help to retrieve command list\n" +
+                "Good Bye!\n", getActualResult());
+    }
+
+    @Test
+    public void testAddBookCommand_WrongNumbersFormatForPageCount(){
+        //given
+        in.add("add_book");
+        in.add("Master i Margarita");
+        in.add("-294");
+        in.add("294");
+        in.add("Mickail Bulgakov");
+        in.add("1968");
+        in.add("exit");
+
+        //when
+        Application.main(new String[0]);
+
+        Assert.assertEquals("Welcome to the library\n" +
+                "Please enter a command or help to retrieve command list\n" +
+                "Enter the book name:\n" +
+                "Enter number of pages: \n" +
+                "Wrong format, enter integer.\n" +
+                "Enter number of pages: \n" +
+                "Author's name: \n" +
+                "Enter the publication's year: \n" +
+                "The book Master i Margarita added successfully\n" +
+                "Please enter a command or help to retrieve command list\n" +
+                "Good Bye!\n", getActualResult());
+    }
+
+    @Test
+    public void testAddBookCommand_WrongNumbersFormatForPublicationYear(){
+        //given
+        in.add("add_book");
+        in.add("Master i Margarita");
+        in.add("294");
+        in.add("Mickail Bulgakov");
+        in.add("gfg");
+        in.add("1968");
+        in.add("exit");
+
+        //when
+        Application.main(new String[0]);
+
+        Assert.assertEquals("Welcome to the library\n" +
+                "Please enter a command or help to retrieve command list\n" +
+                "Enter the book name:\n" +
+                "Enter number of pages: \n" +
+                "Author's name: \n" +
+                "Enter the publication's year: \n" +
+                "Wrong data, enter the number\n" +
+                "Enter the publication's year: \n" +
+                "The book Master i Margarita added successfully\n" +
+                "Please enter a command or help to retrieve command list\n" +
+                "Good Bye!\n", getActualResult());
+    }
+
+    @Test
+    public void testAddBookCommand_AddDuplicateBookException(){
+        //given
+        in.add("add_book");
+        in.add("Master i Margarita");
+        in.add("-294");
+        in.add("294");
+        in.add("Mickail Bulgakov");
+        in.add("1968");
+        in.add("add_book");
+        in.add("Master i Margarita");
+        in.add("-294");
+        in.add("294");
+        in.add("Mickail Bulgakov");
+        in.add("1968");
+        in.add("exit");
+
+        //when
+        Application.main(new String[0]);
+
+        Assert.assertEquals("Welcome to the library\n" +
+                "Please enter a command or help to retrieve command list\n" +
+                "Enter the book name:\n" +
+                "Enter number of pages: \n" +
+                "Wrong format, enter integer.\n" +
+                "Enter number of pages: \n" +
+                "Author's name: \n" +
+                "Enter the publication's year: \n" +
+                "The book Master i Margarita added successfully\n" +
+                "Please enter a command or help to retrieve command list\n" +
+                "Enter the book name:\n" +
+                "Enter number of pages: \n" +
+                "Wrong format, enter integer.\n" +
+                "Enter number of pages: \n" +
+                "Author's name: \n" +
+                "Enter the publication's year: \n" +
+                "This publication already exist, add another publication\n" +
                 "Please enter a command or help to retrieve command list\n" +
                 "Good Bye!\n", getActualResult());
     }

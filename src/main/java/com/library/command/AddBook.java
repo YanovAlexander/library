@@ -1,12 +1,14 @@
 package com.library.command;
 
+import com.library.exceptions.DataStorageException;
 import com.library.model.DataStorage;
 import com.library.model.entity.Book;
+import com.library.model.entity.Publication;
 import com.library.view.View;
 
 import static com.library.command.Messages.*;
 
-public class AddBook implements Command{
+public class AddBook implements Command {
     private View view;
     private DataStorage dataStorage;
 
@@ -26,18 +28,23 @@ public class AddBook implements Command{
     }
 
     private void addBookToDataStorage(DataStorage dataStorage) {
-        view.write("Введите название книги:");
+        view.write("Enter the book name:");
         String bookName = view.read();
         int pagesCount = getIntegerFromConsole(PAGE_NUMBER.getMessage(), PAGE_NUMBER.getErrorMessage());
 
-        view.write("Введите имя автора: ");
+        view.write("Author's name: ");
         String author = view.read();
 
         int publicationYear = getIntegerFromConsole(PUBLICATION_YEAR.getMessage(), PUBLICATION_YEAR.getErrorMessage());
 
         Book book = new Book(bookName, pagesCount, author, publicationYear);
-        dataStorage.addPublication(book);
-        view.write("Ваша книга добавлена");
+        try {
+            dataStorage.addPublication(book);
+        }catch (DataStorageException ex){
+            view.write(ex.getMessage());
+            return;
+        }
+        view.write(String.format("The book %s added successfully", book.getName()));
     }
 
     private int getIntegerFromConsole(String message, String errorMessage) {
@@ -47,7 +54,11 @@ public class AddBook implements Command{
             try {
                 view.write(message);
                 number = Integer.parseInt(view.read());
-                isFieldBlank = false;
+                if (number <= 0) {
+                    view.write(errorMessage);
+                } else {
+                    isFieldBlank = false;
+                }
             } catch (Exception e) {
                 view.write(errorMessage);
             }
