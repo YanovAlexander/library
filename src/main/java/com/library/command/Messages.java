@@ -1,8 +1,8 @@
 package com.library.command;
 
 public enum  Messages {
-    PUBLICATION_YEAR("Введите год публикации: ", "Вы ввели не число, введите год публикации."),
-    PAGE_NUMBER("Введите количество страниц: ", "Вы ввели не целое число страниц, введите верное количество страниц.");
+    PUBLICATION_YEAR("Enter the publication's year: ", "Wrong data, enter the number"),
+    PAGE_NUMBER("Enter number of pages: ", "Wrong format, enter integer.");
 
     private String message;
     private String errorMessage;

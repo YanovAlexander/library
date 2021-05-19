@@ -20,7 +20,7 @@ public class FindAll implements Command {
     public void process() {
         List<Publication> allPublications = dataStorage.findAll();
         if(allPublications.isEmpty()){
-            view.write("Библиотека пустая. Добавьте книгу.");
+            view.write("There is no books in a library. Add book please.");
         }
         for (Publication name : allPublications) {
             view.write(name.print());

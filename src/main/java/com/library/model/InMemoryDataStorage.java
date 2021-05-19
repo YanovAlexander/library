@@ -21,20 +21,28 @@ public class InMemoryDataStorage implements DataStorage {
 
     @Override
     public void addPublication(Publication publication) {
-        if (Objects.isNull(publication)) {
-            throw new DataStorageException("Publication can't be null");
+        checkPublicationNotNull(publication);
+        if(publications.contains(publication)){
+            throw new DataStorageException("This publication already exist, add another publication");
         }
 
-        this.publications.add(publication);
+            this.publications.add(publication);
     }
 
     @Override
     public void remove(Publication publication) {
+        checkPublicationNotNull(publication);
         this.publications.remove(publication);
     }
 
     @Override
     public List<Publication> findAll() {
         return publications;
+    }
+
+    public void checkPublicationNotNull(Publication publication) {
+        if (Objects.isNull(publication)) {
+            throw new DataStorageException("Publication can't be null");
+        }
     }
 }

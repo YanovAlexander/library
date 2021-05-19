@@ -3,10 +3,19 @@ package com.library.model.entity;
 import java.util.Objects;
 
 public class Book extends Publication {
+
     private String author;
 
     public Book(String name, int countPages, String author, int publicationYear) {
         super(name, countPages, publicationYear);
+        this.author = author;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
         this.author = author;
     }
 

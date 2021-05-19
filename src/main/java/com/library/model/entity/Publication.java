@@ -11,6 +11,30 @@ public class Publication {
         this.publicationYear = publicationYear;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getCountPages() {
+        return countPages;
+    }
+
+    public void setCountPages(int countPages) {
+        this.countPages = countPages;
+    }
+
+    public int getPublicationYear() {
+        return publicationYear;
+    }
+
+    public void setPublicationYear(int publicationYear) {
+        this.publicationYear = publicationYear;
+    }
+
     public String print() {
         return "name=" + this.name + ", count pages=" + this.countPages + "year=" + this.publicationYear;
     }
