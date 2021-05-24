@@ -5,19 +5,16 @@ import com.library.config.DatabaseConnectionManager;
 import com.library.controller.MainController;
 import com.library.model.DataStorage;
 import com.library.model.InMemoryDataStorage;
-import com.library.util.PropertiesLoader;
+import com.library.util.PropertiesConfig;
 import com.library.view.Console;
 import com.library.view.View;
 
 public class Application {
     public static void main(String[] args) {
-        PropertiesLoader propertiesLoader = new PropertiesLoader();
+        PropertiesConfig propertiesLoader = new PropertiesConfig();
         propertiesLoader.loadPropertiesFile("application.properties");
 
-        DatabaseConnectionManager ds = new DatabaseConnectionManager(propertiesLoader.getProperty("host"),
-                propertiesLoader.getProperty("database.name"),
-                propertiesLoader.getProperty("username"),
-                propertiesLoader.getProperty("password"));
+        DatabaseConnectionManager ds = new DatabaseConnectionManager(propertiesLoader);
         DataStorage storage = new InMemoryDataStorage();
         View view = new Console();
 

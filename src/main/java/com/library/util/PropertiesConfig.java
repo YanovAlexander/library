@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-public class PropertiesLoader {
+public class PropertiesConfig {
     private Properties properties = new Properties();
 
     public String  getProperty(String name){
