@@ -1,7 +1,7 @@
 package com.library.model;
 
 import com.library.exceptions.DataStorageException;
-import com.library.model.entity.Publication;
+import com.library.dto.Publication;
 
 import java.util.ArrayList;
 import java.util.List;

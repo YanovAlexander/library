@@ -17,3 +17,15 @@ publicationYear int not null,
 number int not null,
 description text,
 genre varchar(250) not null);
+
+ALTER TABLE book
+    RENAME countPages TO count_pages;
+
+ALTER TABLE book
+    RENAME publicationYear TO publication_year;
+
+ALTER TABLE journal
+    RENAME countPages TO count_pages;
+
+ALTER TABLE journal
+    RENAME publicationYear TO publication_year;

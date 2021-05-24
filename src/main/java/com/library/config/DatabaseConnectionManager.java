@@ -1,6 +1,6 @@
 package com.library.config;
 
-import com.library.util.PropertiesConfig;
+import com.library.service.util.PropertiesConfig;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 

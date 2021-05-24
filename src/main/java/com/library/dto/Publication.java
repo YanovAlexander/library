@@ -1,4 +1,4 @@
-package com.library.model.entity;
+package com.library.dto;
 
 public class Publication {
     private String name;

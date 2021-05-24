@@ -1,6 +1,6 @@
 package com.library.model;
 
-import com.library.model.entity.Publication;
+import com.library.dto.Publication;
 import java.util.List;
 
 public interface DataStorage {

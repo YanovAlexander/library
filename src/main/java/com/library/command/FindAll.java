@@ -1,7 +1,7 @@
 package com.library.command;
 
 import com.library.model.DataStorage;
-import com.library.model.entity.Publication;
+import com.library.dto.Publication;
 import com.library.view.View;
 
 import java.util.List;

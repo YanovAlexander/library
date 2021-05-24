@@ -2,7 +2,8 @@ package com.library.command;
 
 public enum  Messages {
     PUBLICATION_YEAR("Enter the publication's year: ", "Wrong data, enter the number"),
-    PAGE_NUMBER("Enter number of pages: ", "Wrong format, enter integer.");
+    PAGE_NUMBER("Enter number of pages: ", "Wrong format, enter integer."),
+    GENRE("Enter genre from list %s:", "Wrong genre, choose from list.");
 
     private String message;
     private String errorMessage;

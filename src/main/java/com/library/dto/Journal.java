@@ -1,4 +1,4 @@
-package com.library.model.entity;
+package com.library.dto;
 
 import java.util.Objects;
 

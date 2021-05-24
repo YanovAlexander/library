@@ -5,7 +5,7 @@ import com.library.config.DatabaseConnectionManager;
 import com.library.controller.MainController;
 import com.library.model.DataStorage;
 import com.library.model.InMemoryDataStorage;
-import com.library.util.PropertiesConfig;
+import com.library.service.util.PropertiesConfig;
 import com.library.view.Console;
 import com.library.view.View;
 
