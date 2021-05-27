@@ -1,20 +1,21 @@
 package com.library.model;
 
 import com.library.config.DatabaseConnectionManager;
+import com.library.config.DatabaseManager;
 import com.library.model.entity.BookDAO;
 import com.library.service.BookConverter;
 
 import java.sql.*;
 
 public class BookRepository implements Repository<BookDAO> {
-    private final DatabaseConnectionManager connectionManager;
+    private final DatabaseManager connectionManager;
     private static final String INSERT = "INSERT INTO book (name, count_pages, publication_year, author, description , genre) " +
             "VALUES (?, ?, ?, ?, ?, ?)";
     private static final String FIND_BY_ID = "SELECT id, name, count_pages, publication_year, author, description , genre " +
             "FROM book WHERE id = ?";
 
 
-    public BookRepository(DatabaseConnectionManager connectionManager) {
+    public BookRepository(DatabaseManager connectionManager) {
         this.connectionManager = connectionManager;
     }
 

@@ -7,13 +7,14 @@ import com.zaxxer.hikari.HikariDataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class DatabaseConnectionManager {
+public class DatabaseConnectionManager implements DatabaseManager {
     private HikariDataSource ds;
 
     public DatabaseConnectionManager(PropertiesConfig propertiesLoader) {
         initDataSource(propertiesLoader);
     }
 
+    @Override
     public Connection getConnection() {
         try {
             return ds.getConnection();

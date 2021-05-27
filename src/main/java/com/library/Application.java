@@ -20,7 +20,7 @@ public class Application {
 
         DatabaseConnectionManager ds = new DatabaseConnectionManager(propertiesLoader);
         DataStorage storage = new InMemoryDataStorage();
-        View view = new Console();
+        View view = new Console(System.in, System.out);
 
         Repository<BookDAO> bookRepository = new BookRepository(ds);
         BookService bookService = new BookService(bookRepository);
