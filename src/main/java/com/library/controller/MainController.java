@@ -5,6 +5,7 @@ import com.library.command.Command;
 import com.library.command.FindAll;
 import com.library.command.Help;
 import com.library.model.DataStorage;
+import com.library.service.BookService;
 import com.library.view.View;
 
 import java.util.ArrayList;
@@ -15,10 +16,10 @@ public class MainController {
     private View view;
     private List<Command> commands;
 
-    public MainController(DataStorage dataStorage, View view) {
+    public MainController(DataStorage dataStorage, View view, BookService bookService) {
         this.view = view;
         this.commands = new ArrayList<>(Arrays.asList(
-                new Help(view), new AddBook(view, dataStorage), new FindAll(view, dataStorage)
+                new Help(view), new AddBook(view, bookService), new FindAll(view, dataStorage)
         ));
     }
 

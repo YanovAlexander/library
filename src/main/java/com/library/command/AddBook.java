@@ -2,8 +2,8 @@ package com.library.command;
 
 import com.library.dto.Genre;
 import com.library.exceptions.DataStorageException;
-import com.library.model.DataStorage;
 import com.library.dto.BookDTO;
+import com.library.service.BookService;
 import com.library.view.View;
 
 import java.util.Arrays;
@@ -13,16 +13,16 @@ import static com.library.command.Messages.*;
 
 public class AddBook implements Command {
     private View view;
-    private DataStorage dataStorage;
+    private final BookService service;
 
-    public AddBook(View view, DataStorage dataStorage) {
+    public AddBook(View view, BookService service) {
         this.view = view;
-        this.dataStorage = dataStorage;
+        this.service = service;
     }
 
     @Override
     public void process() {
-        addBookToDataStorage(dataStorage);
+        addBookToDataStorage(service);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class AddBook implements Command {
         return "add_book";
     }
 
-    private void addBookToDataStorage(DataStorage dataStorage) {
+    private void addBookToDataStorage(BookService service) {
         view.write("Enter the book name:");
         String bookName = view.read();
         int pagesCount = getIntegerFromConsole(PAGE_NUMBER.getMessage(), PAGE_NUMBER.getErrorMessage());
@@ -50,13 +50,14 @@ public class AddBook implements Command {
         int publicationYear = getIntegerFromConsole(PUBLICATION_YEAR.getMessage(), PUBLICATION_YEAR.getErrorMessage());
 
         BookDTO bookDTO = new BookDTO(0, author, bookName, pagesCount, publicationYear, description, genre);
+        BookDTO created = null;
         try {
-//            dataStorage.addPublication(bookDTO);
+            created = service.addBook(bookDTO);
         }catch (DataStorageException ex){
             view.write(ex.getMessage());
             return;
         }
-        view.write(String.format("The book %s added successfully", bookDTO.getName()));
+        view.write(String.format("The book %s added successfully", created.getName()));
     }
 
     private int getIntegerFromConsole(String message, String errorMessage) {
