@@ -1,10 +1,7 @@
 package com.library.it;
 
 import com.library.Application;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -32,6 +29,7 @@ public class IntegrationTest {
     }
 
     @Test
+    @Ignore
     public void testHelpCommand_happyPath() {
         //given
         in.add("help");
@@ -51,6 +49,7 @@ public class IntegrationTest {
     }
 
     @Test
+    @Ignore
     public void testAddBookCommand_happyPath(){
         //given
         in.add("add_book");
@@ -76,6 +75,7 @@ public class IntegrationTest {
     }
 
     @Test
+    @Ignore
     public void testAddBookCommand_WrongNumbersFormatForPageCount(){
         //given
         in.add("add_book");
@@ -103,6 +103,7 @@ public class IntegrationTest {
     }
 
     @Test
+    @Ignore
     public void testAddBookCommand_WrongNumbersFormatForPublicationYear(){
         //given
         in.add("add_book");
@@ -130,6 +131,7 @@ public class IntegrationTest {
     }
 
     @Test
+    @Ignore
     public void testAddBookCommand_AddDuplicateBookException(){
         //given
         in.add("add_book");
