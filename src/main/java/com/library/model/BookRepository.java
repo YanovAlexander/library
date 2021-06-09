@@ -1,28 +1,31 @@
 package com.library.model;
 
-import com.library.config.DatabaseConnectionManager;
-import com.library.config.DatabaseManager;
 import com.library.model.entity.BookDAO;
 import com.library.service.BookConverter;
+import com.zaxxer.hikari.HikariDataSource;
 
 import java.sql.*;
+import java.util.Collections;
+import java.util.List;
 
 public class BookRepository implements Repository<BookDAO> {
-    private final DatabaseManager connectionManager;
+    private final HikariDataSource dataSource;
     private static final String INSERT = "INSERT INTO book (name, count_pages, publication_year, author, description , genre) " +
             "VALUES (?, ?, ?, ?, ?, ?)";
     private static final String FIND_BY_ID = "SELECT id, name, count_pages, publication_year, author, description , genre " +
             "FROM book WHERE id = ?";
+    private static final String FIND_ALL = "SELECT id, name, count_pages, publication_year, author, description , genre " +
+            "FROM book";
 
 
-    public BookRepository(DatabaseManager connectionManager) {
-        this.connectionManager = connectionManager;
+    public BookRepository(HikariDataSource dataSource) {
+        this.dataSource = dataSource;
     }
 
     @Override
     public long addPublication(BookDAO bookDAO) {
         long id = 0;
-        try (Connection connection = connectionManager.getConnection();
+        try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, bookDAO.getName());
             statement.setInt(2, bookDAO.getCountPages());
@@ -44,7 +47,7 @@ public class BookRepository implements Repository<BookDAO> {
     @Override
     public BookDAO findById(long id) {
         BookDAO bookDAO = null;
-        try (Connection connection = connectionManager.getConnection();
+        try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(FIND_BY_ID)) {
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
@@ -53,5 +56,18 @@ public class BookRepository implements Repository<BookDAO> {
             ex.printStackTrace();
         }
         return bookDAO;
+    }
+
+    @Override
+    public List<BookDAO> findAll() {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement statement = connection.prepareStatement(FIND_ALL)) {
+            ResultSet resultSet = statement.executeQuery();
+            return BookConverter.toBookDAOCollection(resultSet);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return Collections.emptyList();
     }
 }

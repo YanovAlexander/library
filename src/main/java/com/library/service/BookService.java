@@ -4,6 +4,9 @@ import com.library.dto.BookDTO;
 import com.library.model.Repository;
 import com.library.model.entity.BookDAO;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class BookService {
     private final Repository<BookDAO> repository;
 
@@ -18,4 +21,11 @@ public class BookService {
         return BookConverter.fromBookDAO(created);
     }
 
+
+    public List<BookDTO> findAll() {
+        final List<BookDAO> books = repository.findAll();
+        return books.stream()
+                .map(BookConverter::fromBookDAO)
+                .collect(Collectors.toList());
+    }
 }

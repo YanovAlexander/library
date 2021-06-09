@@ -1,14 +1,22 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>First page</title>
+        <title>GOIT Library</title>
     </head>
     <body>
-        Hello Library GOIT
-
-        <c:forEach var="student" items="${students}">
-            <p>${student}</p>
-        </c:forEach>
+    <p>GOIT Library</p>
+    <table>
+        <tbody>
+            <tr>
+                <td><a href="/books">Show books</a></td>
+            </tr>
+            <tr>
+                <td><a href="/books/add">Add book</a></td>
+            </tr>
+            <tr>
+                <td><a href="/journals">Show journals</a></td>
+            </tr>
+        </tbody>
+     </table>
     </body>
 </html>

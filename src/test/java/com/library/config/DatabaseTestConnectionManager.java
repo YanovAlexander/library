@@ -8,14 +8,17 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class DatabaseTestConnectionManager implements DatabaseManager {
+public class DatabaseTestConnectionManager {
     private HikariDataSource ds;
 
     public DatabaseTestConnectionManager() {
         initDataSource();
     }
 
-    @Override
+    public HikariDataSource getDataSource() {
+        return ds;
+    }
+
     public Connection getConnection() {
         try {
             return ds.getConnection();

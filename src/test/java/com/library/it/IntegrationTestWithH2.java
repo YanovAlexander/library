@@ -17,7 +17,7 @@ public class IntegrationTestWithH2 {
     private ByteArrayOutputStream out = new ByteArrayOutputStream();
     private View view = new Console(in, out);
     private static DatabaseTestConnectionManager connectionManager = new DatabaseTestConnectionManager();
-    private BookRepository bookRepository = new BookRepository(connectionManager);
+    private BookRepository bookRepository = new BookRepository(connectionManager.getDataSource());
     private BookService bookService = new BookService(bookRepository);
     private AddBook addBookCommand = new AddBook(view, bookService);
 

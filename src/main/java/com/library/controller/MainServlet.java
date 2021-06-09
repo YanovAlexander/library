@@ -1,4 +1,4 @@
-package com.library;
+package com.library.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,12 +16,6 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<String> names = new ArrayList<>();
-        names.add("Denis");
-        names.add("Hanna");
-        names.add("Vadym");
-        names.add("Oleksandr");
-        names.add("Tetiana");
-        req.setAttribute("students", names);
         req.getRequestDispatcher("/view/index.jsp").forward(req, resp);
     }
 }

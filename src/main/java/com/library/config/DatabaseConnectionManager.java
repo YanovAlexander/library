@@ -4,35 +4,43 @@ import com.library.service.util.PropertiesConfig;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-import java.sql.Connection;
-import java.sql.SQLException;
+import java.util.Objects;
 
-public class DatabaseConnectionManager implements DatabaseManager {
-    private HikariDataSource ds;
+public class DatabaseConnectionManager {
+    private static HikariDataSource ds;
 
-    public DatabaseConnectionManager(PropertiesConfig propertiesLoader) {
+    private DatabaseConnectionManager() {
+    }
+
+    public static void init() {
+        PropertiesConfig propertiesLoader = new PropertiesConfig();
+        propertiesLoader.loadPropertiesFile("application.properties");
         initDataSource(propertiesLoader);
     }
 
-    @Override
-    public Connection getConnection() {
-        try {
-            return ds.getConnection();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            throw new RuntimeException(throwables);
+    public static synchronized HikariDataSource getDataSource() {
+        if (Objects.isNull(ds)) {
+            init();
+            return ds;
         }
+        return ds;
     }
 
-    private void initDataSource(PropertiesConfig propertiesLoader) {
-        HikariConfig config = new HikariConfig();
-        config.setJdbcUrl(String.format("jdbc:postgresql://%s/%s", propertiesLoader.getProperty("host"),
-                propertiesLoader.getProperty("database.name")));
-        config.setUsername(propertiesLoader.getProperty("username"));
-        config.setPassword(propertiesLoader.getProperty("password"));
-        config.setMaximumPoolSize(10);
-        config.setIdleTimeout(10_000);
-        config.setConnectionTimeout(10_000);
-        ds = new HikariDataSource(config);
+
+    private static void initDataSource(PropertiesConfig propertiesLoader) {
+        try {
+            HikariConfig config = new HikariConfig();
+            config.setJdbcUrl(String.format("jdbc:postgresql://%s/%s", propertiesLoader.getProperty("host"),
+                    propertiesLoader.getProperty("database.name")));
+            config.setUsername(propertiesLoader.getProperty("username"));
+            config.setPassword(propertiesLoader.getProperty("password"));
+            config.setMaximumPoolSize(10);
+            config.setIdleTimeout(10_000);
+            config.setConnectionTimeout(10_000);
+            config.setDriverClassName(propertiesLoader.getProperty("jdbc.driver"));
+            ds = new HikariDataSource(config);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
