@@ -3,12 +3,17 @@ package com.library.model;
 import com.library.model.entity.BookDAO;
 import com.library.service.BookConverter;
 import com.zaxxer.hikari.HikariDataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.Collections;
 import java.util.List;
 
 public class BookRepository implements Repository<BookDAO> {
+
+    private final static Logger LOG = LoggerFactory.getLogger(BookRepository.class);
+
     private final HikariDataSource dataSource;
     private static final String INSERT = "INSERT INTO book (name, count_pages, publication_year, author, description , genre) " +
             "VALUES (?, ?, ?, ?, ?, ?)";
@@ -39,7 +44,7 @@ public class BookRepository implements Repository<BookDAO> {
                 id = resultSet.getLong(1);
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            LOG.error(String.format("addPublication. book.name=%s, book.author=%s", bookDAO.getName(), bookDAO.getAuthor()), ex);
         }
         return id;
     }
@@ -53,7 +58,7 @@ public class BookRepository implements Repository<BookDAO> {
             ResultSet resultSet = statement.executeQuery();
             bookDAO = BookConverter.toBookDAO(resultSet);
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            LOG.error(String.format("findById. book.id=%s", id), ex);
         }
         return bookDAO;
     }
