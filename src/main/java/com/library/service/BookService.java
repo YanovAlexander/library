@@ -28,4 +28,8 @@ public class BookService {
                 .map(BookConverter::fromBookDAO)
                 .collect(Collectors.toList());
     }
+
+    public BookDTO findById(long id){
+        return BookConverter.fromBookDAO(repository.findById(id));
+    }
 }

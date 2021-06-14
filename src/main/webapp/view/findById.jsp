@@ -6,6 +6,7 @@
     </head>
     <body>
     <p>GOIT Library</p>
+    <c:set var="book" value="${book}" />
     <table border="1" cellpadding="5">
         <thead>
             <tr>
@@ -13,23 +14,19 @@
                 <td>Book name</td>
                 <td>Pages</td>
                 <td>Publication year</td>
+                <td>Description</td>
                 <td>Genre</td>
             </tr>
         </thead>
         <tbody>
-             <c:forEach var="book" items="${books}">
                  <tr>
                      <td>${book.author}</td>
                      <td>${book.name}</td>
                      <td>${book.countPages}</td>
                      <td>${book.publicationYear}</td>
+                     <td>${book.description}</td>
                      <td>${book.genre}</td>
-                     <td> <a href="/books/findById?id=${book.id}">
-                             <button>Details</button>
-                          </a>
-                      </td>
                  </tr>
-             </c:forEach>
         </tbody>
      </table>
     </body>
