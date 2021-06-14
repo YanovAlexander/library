@@ -1,6 +1,5 @@
 package com.library.controller;
 
-import com.library.command.AddBook;
 import com.library.command.Command;
 import com.library.command.FindAll;
 import com.library.command.Help;
@@ -19,7 +18,7 @@ public class MainController {
     public MainController(DataStorage dataStorage, View view, BookService bookService) {
         this.view = view;
         this.commands = new ArrayList<>(Arrays.asList(
-                new Help(view), new AddBook(view, bookService), new FindAll(view, dataStorage)
+                new Help(view), new FindAll(view, dataStorage)
         ));
     }
 
