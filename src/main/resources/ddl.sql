@@ -29,3 +29,9 @@ ALTER TABLE journal
 
 ALTER TABLE journal
     RENAME publicationYear TO publication_year;
+
+ALTER TABLE journal
+    RENAME genre TO journal_type;
+
+ALTER TABLE journal
+    RENAME publication_year TO year;
