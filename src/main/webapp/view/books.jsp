@@ -10,11 +10,12 @@
     <table border="1" cellpadding="5">
         <thead>
             <tr>
-                <td>Author</td>
-                <td>Book name</td>
-                <td>Pages</td>
-                <td>Publication year</td>
-                <td>Genre</td>
+                <td align="center">Author</td>
+                <td align="center">Book name</td>
+                <td align="center">Pages</td>
+                <td align="center">Publication year</td>
+                <td align="center">Genre</td>
+                <td colspan="2" align="center">Actions</td>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,10 @@
                      <td> <a href="/books/findById?id=${book.id}">
                              <button>Details</button>
                           </a>
+                      </td>
+                      <td> <a href="/books/update?id=${book.id}">
+                              <button>Update</button>
+                           </a>
                       </td>
                  </tr>
              </c:forEach>

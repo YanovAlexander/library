@@ -51,4 +51,8 @@ public class JournalRepository implements Repository<JournalDAO> {
     public List<JournalDAO> findAll() {
         return null;
     }
+
+    @Override
+    public void update(JournalDAO entity) {
+    }
 }

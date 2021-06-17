@@ -29,7 +29,11 @@ public class BookService {
                 .collect(Collectors.toList());
     }
 
-    public BookDTO findById(long id){
+    public BookDTO findById(long id) {
         return BookConverter.fromBookDAO(repository.findById(id));
+    }
+
+    public void update(BookDTO bookDTO) {
+        repository.update(BookConverter.toBookDAO(bookDTO));
     }
 }

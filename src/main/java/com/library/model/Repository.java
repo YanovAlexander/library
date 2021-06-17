@@ -9,4 +9,6 @@ public interface Repository<T> {
     T findById(long id);
 
     List<T> findAll();
+
+    void update(T entity);
 }

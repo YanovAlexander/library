@@ -22,6 +22,9 @@ public class BookRepository implements Repository<BookDAO> {
     private static final String FIND_ALL = "SELECT id, name, count_pages, publication_year, author, description , genre " +
             "FROM book";
 
+    private static final String UPDATE = "UPDATE book SET name=?, count_pages=?, publication_year=?, " +
+            "author=?, description=?, genre=? WHERE id=?";
+
 
     public BookRepository(HikariDataSource dataSource) {
         this.dataSource = dataSource;
@@ -74,5 +77,23 @@ public class BookRepository implements Repository<BookDAO> {
         }
 
         return Collections.emptyList();
+    }
+
+    @Override
+    public void update(BookDAO bookDAO) {
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement statement = connection.prepareStatement(UPDATE)) {
+            statement.setString(1, bookDAO.getName());
+            statement.setInt(2, bookDAO.getCountPages());
+            statement.setInt(3, bookDAO.getPublicationYear());
+            statement.setString(4, bookDAO.getAuthor());
+            statement.setString(5, bookDAO.getDescription());
+            statement.setString(6, bookDAO.getGenre().name());
+            statement.setLong(7, bookDAO.getId());
+            statement.execute();
+
+        } catch (SQLException ex) {
+            LOG.error(String.format("update. book.name=%s, book.author=%s", bookDAO.getName(), bookDAO.getAuthor()), ex);
+        }
     }
 }
