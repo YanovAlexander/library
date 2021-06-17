@@ -3,9 +3,10 @@
 <html>
     <head>
         <title>GOIT Library</title>
+        <style><%@include file="/view/css/style.css"%></style>
     </head>
     <body>
-    <p>GOIT Library</p>
+<c:import url="/view/navibar.jsp"/>
         <form name="bookForm" method="post" action="/books">
             Author: <input type="text" name="author"/> <br/>
             Name: <input type="text" name="name"/> <br/>

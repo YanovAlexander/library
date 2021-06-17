@@ -3,9 +3,10 @@
 <html>
     <head>
         <title>GOIT Library</title>
+        <style><%@include file="/view/css/style.css"%></style>
     </head>
     <body>
-    <p>GOIT Library</p>
+    <c:import url="/view/navibar.jsp"/>
     <c:set var="book" value="${book}" />
     <table border="1" cellpadding="5">
         <thead>
