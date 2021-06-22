@@ -1,6 +1,7 @@
 package com.library.controller;
 
 import com.library.config.DatabaseConnectionManager;
+import com.library.config.HibernateDatabaseConnector;
 import com.library.dto.BookDTO;
 import com.library.dto.Genre;
 import com.library.model.BookRepository;
@@ -23,7 +24,8 @@ public class UpdateBookServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        this.repository = new BookRepository(DatabaseConnectionManager.getDataSource());
+        this.repository = new BookRepository(DatabaseConnectionManager.getDataSource(),
+                HibernateDatabaseConnector.getSessionFactory());
         this.bookService = new BookService(repository);
     }
 

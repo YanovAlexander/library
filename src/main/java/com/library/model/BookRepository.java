@@ -3,6 +3,8 @@ package com.library.model;
 import com.library.model.entity.BookDAO;
 import com.library.service.BookConverter;
 import com.zaxxer.hikari.HikariDataSource;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +17,8 @@ public class BookRepository implements Repository<BookDAO> {
     private final static Logger LOG = LoggerFactory.getLogger(BookRepository.class);
 
     private final HikariDataSource dataSource;
+    private final SessionFactory sessionFactory;
+
     private static final String INSERT = "INSERT INTO book (name, count_pages, publication_year, author, description , genre) " +
             "VALUES (?, ?, ?, ?, ?, ?)";
     private static final String FIND_BY_ID = "SELECT id, name, count_pages, publication_year, author, description , genre " +
@@ -26,8 +30,9 @@ public class BookRepository implements Repository<BookDAO> {
             "author=?, description=?, genre=? WHERE id=?";
 
 
-    public BookRepository(HikariDataSource dataSource) {
+    public BookRepository(HikariDataSource dataSource, SessionFactory sessionFactory) {
         this.dataSource = dataSource;
+        this.sessionFactory = sessionFactory;
     }
 
     @Override
@@ -55,12 +60,9 @@ public class BookRepository implements Repository<BookDAO> {
     @Override
     public BookDAO findById(long id) {
         BookDAO bookDAO = null;
-        try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(FIND_BY_ID)) {
-            statement.setLong(1, id);
-            ResultSet resultSet = statement.executeQuery();
-            bookDAO = BookConverter.toBookDAO(resultSet);
-        } catch (SQLException ex) {
+        try (Session session = sessionFactory.openSession()){
+            bookDAO = session.get(BookDAO.class, id);
+        } catch (Exception ex) {
             LOG.error(String.format("findById. book.id=%s", id), ex);
         }
         return bookDAO;

@@ -16,10 +16,15 @@ public class AppInit  implements ServletContextListener {
         DatabaseConnectionManager.init();
         System.out.println("Database init finished");
         LOG.debug("Database init finished");
+        System.out.println("Init hibernate");
+        HibernateDatabaseConnector.init();
+        System.out.println("Hibernate initialisation finished");
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-
+        System.out.println("Hibernate destroy");
+        HibernateDatabaseConnector.destroy();
+        System.out.println("Hibernate destroy finished");
     }
 }

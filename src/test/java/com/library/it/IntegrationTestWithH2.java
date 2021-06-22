@@ -1,6 +1,7 @@
 package com.library.it;
 
 import com.library.config.DatabaseTestConnectionManager;
+import com.library.config.HibernateDatabaseConnector;
 import com.library.model.BookRepository;
 import com.library.service.BookService;
 import com.library.view.Console;
@@ -16,7 +17,8 @@ public class IntegrationTestWithH2 {
     private ByteArrayOutputStream out = new ByteArrayOutputStream();
     private View view = new Console(in, out);
     private static DatabaseTestConnectionManager connectionManager = new DatabaseTestConnectionManager();
-    private BookRepository bookRepository = new BookRepository(connectionManager.getDataSource());
+    private BookRepository bookRepository = new BookRepository(connectionManager.getDataSource(),
+            HibernateDatabaseConnector.getSessionFactory());
     private BookService bookService = new BookService(bookRepository);
 
 

@@ -1,0 +1,36 @@
+<?xml version='1.0'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.library.model.entity">
+
+    <class name="BookDAO" table="book">
+        <id name="id" column="id" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+
+        <property name="author" type="java.lang.String">
+            <column name="author" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="name" />
+        </property>
+        <property name="countPages" type="java.lang.Integer">
+            <column name="count_pages" />
+        </property>
+        <property name="publicationYear" type="java.lang.Integer">
+            <column name="publication_year" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="description" />
+        </property>
+        <property name="genre" column="genre">
+            <type name="org.hibernate.type.EnumType">
+                <param name="enumClass">com.library.dto.Genre</param>
+                <param name="type">12</param>
+            </type>
+        </property>
+    </class>
+
+</hibernate-mapping>
