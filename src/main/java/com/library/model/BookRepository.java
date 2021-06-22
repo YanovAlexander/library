@@ -5,12 +5,14 @@ import com.library.service.BookConverter;
 import com.zaxxer.hikari.HikariDataSource;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class BookRepository implements Repository<BookDAO> {
 
@@ -19,10 +21,6 @@ public class BookRepository implements Repository<BookDAO> {
     private final HikariDataSource dataSource;
     private final SessionFactory sessionFactory;
 
-    private static final String INSERT = "INSERT INTO book (name, count_pages, publication_year, author, description , genre) " +
-            "VALUES (?, ?, ?, ?, ?, ?)";
-    private static final String FIND_BY_ID = "SELECT id, name, count_pages, publication_year, author, description , genre " +
-            "FROM book WHERE id = ?";
     private static final String FIND_ALL = "SELECT id, name, count_pages, publication_year, author, description , genre " +
             "FROM book";
 
@@ -37,30 +35,26 @@ public class BookRepository implements Repository<BookDAO> {
 
     @Override
     public long addPublication(BookDAO bookDAO) {
+        Transaction transaction = null;
         long id = 0;
-        try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS)) {
-            statement.setString(1, bookDAO.getName());
-            statement.setInt(2, bookDAO.getCountPages());
-            statement.setInt(3, bookDAO.getPublicationYear());
-            statement.setString(4, bookDAO.getAuthor());
-            statement.setString(5, bookDAO.getDescription());
-            statement.setString(6, bookDAO.getGenre().name());
-            statement.execute();
-            ResultSet resultSet = statement.getGeneratedKeys();
-            if (resultSet.next()) {
-                id = resultSet.getLong(1);
+        try (Session session = sessionFactory.openSession()) {
+            transaction = session.beginTransaction();
+            id = (long) session.save(bookDAO);
+            transaction.commit();
+        } catch (Exception e) {
+            LOG.error(String.format("addPublication. book.name=%s, book.author=%s", bookDAO.getName(), bookDAO.getAuthor()), e);
+            if (Objects.nonNull(transaction)) {
+                transaction.rollback();
             }
-        } catch (SQLException ex) {
-            LOG.error(String.format("addPublication. book.name=%s, book.author=%s", bookDAO.getName(), bookDAO.getAuthor()), ex);
         }
+
         return id;
     }
 
     @Override
     public BookDAO findById(long id) {
         BookDAO bookDAO = null;
-        try (Session session = sessionFactory.openSession()){
+        try (Session session = sessionFactory.openSession()) {
             bookDAO = session.get(BookDAO.class, id);
         } catch (Exception ex) {
             LOG.error(String.format("findById. book.id=%s", id), ex);
