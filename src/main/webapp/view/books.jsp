@@ -10,21 +10,14 @@
 <body>
 <c:import url="/view/navibar.jsp"/>
 
-<table style="border:1px solid gray;width:100%;margin-left:auto;margin-right:auto;margin-top: 20px;font-size: large; font-family: Arial, Helvetica, sans-serif;"
-       cellpadding="5">
+<table cellpadding="5">
     <caption>
         <h2>
             List of Books
         </h2>
     </caption>
-    <thead style="background: lightgray; border:1px solid gray;">
+    <thead>
     <tr>
-        <style>
-            td {
-                border: 1px solid gray;
-            }
-        </style>
-
         <th align="left">Author</th>
         <th align="left">Book name</th>
         <th align="left">Pages</th>

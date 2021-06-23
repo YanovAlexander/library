@@ -9,36 +9,11 @@
 </head>
 <body>
 <c:import url="/view/navibar.jsp"/>
-<style>
-    input[type=text], input[type=number], select {
-        width: 100%;
-        padding: 6px 10px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
 
-    input[type=submit] {
-        width: 100%;
-        background-color: #4CAF50;
-        color: white;
-        padding: 6px 10px;
-        margin: 8px 0;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    input[type=submit] {
-        background-color: gray;
-    }
-</style>
-<h2 align="center" style="font-size: 180%; font-family: Arial, Helvetica, sans-serif;margin-top: 30px;">
+<h2 align="center" class="formCapture">
     Add a book
 </h2>
-<form style="margin-left: auto; margin-right: auto;" name="bookForm" method="post" action="/books">
+<form name="bookForm" method="post" action="/books">
     Author: <br> <input type="text" name="author"/> <br/>
     Name: <br> <input type="text" name="name"/> <br/>
     Pages: <br> <input type="number" name="countPages"/> <br/>

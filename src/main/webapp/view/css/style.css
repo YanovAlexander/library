@@ -2,6 +2,61 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+table {
+    border: 1px solid gray;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+thead {
+    background: lightgray;
+    border: 1px solid gray;
+}
+
+td {
+    border: 1px solid gray;
+}
+
+input[type=text], input[type=number], select {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit] {
+    background-color: gray;
+}
+
+.formCapture {
+    font-size: 180%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 30px;
+}
+
+form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .navbar {
     overflow: hidden;
     background-color: #333;
@@ -41,7 +96,7 @@ body {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -68,6 +123,7 @@ body {
     border-spacing: 0;
     font: normal 13px Arial, sans-serif;
 }
+
 .zui-table thead th {
     background-color: #DDEFEF;
     border: solid 1px #DDEEEE;
@@ -76,6 +132,7 @@ body {
     text-align: left;
     text-shadow: 1px 1px 1px #fff;
 }
+
 .zui-table tbody td {
     border: solid 1px #DDEEEE;
     color: #333;
@@ -94,7 +151,7 @@ body {
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font: bold 14px/32px'Open Sans', sans-serif;
+    font: bold 14px/32px 'Open Sans', sans-serif;
     height: 34px;
     outline: none;
     padding: 0 25px;
@@ -103,6 +160,7 @@ body {
     text-transform: uppercase;
     text-shadow: 1px 1px 1px #1E5799;
 }
+
 .button:hover {
     background-color: #51A1E0;
     background: -webkit-linear-gradient(#51A1E0, #2689D7);
@@ -110,13 +168,16 @@ body {
     border: solid 1px #1A4B84;
     box-shadow: inset 0 0 2px #fff;
 }
+
 .button:active {
     position: relative;
     top: 1px;
 }
+
 .button:focus {
     border: solid 1px #000;
 }
+
 .button[disabled] {
     background: #ccc;
     border: solid 1px #888;
