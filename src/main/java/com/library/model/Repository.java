@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface Repository<T> {
 
-    long addPublication(T entity);
+    int addPublication(T entity);
 
-    T findById(long id);
+    T findById(int id);
 
     List<T> findAll();
 

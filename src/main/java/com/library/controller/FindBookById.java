@@ -30,7 +30,7 @@ public class FindBookById extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        long id = Long.parseLong(req.getParameter("id"));
+        int id = Integer.parseInt(req.getParameter("id"));
         BookDTO book = bookService.findById(id);
         req.setAttribute("book", book);
         req.getRequestDispatcher("/view/findById.jsp").forward(req, resp);

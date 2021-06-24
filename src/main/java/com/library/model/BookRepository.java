@@ -14,6 +14,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+import static net.sf.ehcache.CacheManager.ALL_CACHE_MANAGERS;
+
 public class BookRepository implements Repository<BookDAO> {
 
     private final static Logger LOG = LoggerFactory.getLogger(BookRepository.class);
@@ -30,12 +32,12 @@ public class BookRepository implements Repository<BookDAO> {
     }
 
     @Override
-    public long addPublication(BookDAO bookDAO) {
+    public int addPublication(BookDAO bookDAO) {
         Transaction transaction = null;
-        long id = 0;
+        int id = 0;
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            id = (long) session.save(bookDAO);
+            id = (int) session.save(bookDAO);
             transaction.commit();
         } catch (Exception e) {
             LOG.error(String.format("addPublication. book.name=%s, book.author=%s", bookDAO.getName(), bookDAO.getAuthor()), e);
@@ -48,10 +50,14 @@ public class BookRepository implements Repository<BookDAO> {
     }
 
     @Override
-    public BookDAO findById(long id) {
+    public BookDAO findById(int id) {
         BookDAO bookDAO = null;
         try (Session session = sessionFactory.openSession()) {
             bookDAO = session.get(BookDAO.class, id);
+            int size = ALL_CACHE_MANAGERS.get(0)
+                    .getCache("Book").getSize();
+            System.out.println("----------------------------------");
+            System.out.println(size);
         } catch (Exception ex) {
             LOG.error(String.format("findById. book.id=%s", id), ex);
         }

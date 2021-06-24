@@ -21,8 +21,8 @@ public class JournalRepository implements Repository<JournalDAO> {
     }
 
     @Override
-    public long addPublication(JournalDAO journalDAO) {
-        long id = 0;
+    public int addPublication(JournalDAO journalDAO) {
+        int id = 0;
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, journalDAO.getName());
@@ -34,7 +34,7 @@ public class JournalRepository implements Repository<JournalDAO> {
             statement.execute();
             ResultSet resultSet = statement.getGeneratedKeys();
             if (resultSet.next()) {
-                id = resultSet.getLong(1);
+                id = resultSet.getInt(1);
             }
         } catch (SQLException throwables) {
             LOG.error(".addPublication. Exception happened with saving journal", throwables);
@@ -43,7 +43,7 @@ public class JournalRepository implements Repository<JournalDAO> {
     }
 
     @Override
-    public JournalDAO findById(long id) {
+    public JournalDAO findById(int id) {
         return null;
     }
 
