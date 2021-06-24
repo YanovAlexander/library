@@ -16,7 +16,7 @@
         <property name="show_sql">true</property>
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
-
+        <property name="hbm2ddl.auto">validate</property>
         <mapping resource="BookDAO.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

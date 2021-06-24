@@ -46,7 +46,7 @@ public class UpdateBookServlet extends HttpServlet {
         book.setPublicationYear(Integer.parseInt(req.getParameter("publicationYear")));
         book.setDescription( req.getParameter("description"));
         book.setGenre(Genre.valueOf(req.getParameter("genre")));
-        book.setId(Long.parseLong(req.getParameter("id")));
+        book.setId(Integer.parseInt(req.getParameter("id")));
         bookService.update(book);
         resp.sendRedirect(req.getContextPath() + "/books");
     }

@@ -85,4 +85,17 @@ public class BookRepository implements Repository<BookDAO> {
             }
         }
     }
+
+    public List<BookDAO> findByAuthor(String authorName) {
+        List<BookDAO> bookDAO = null;
+        try (Session session = sessionFactory.openSession()) {
+            bookDAO = session.createQuery("FROM BookDAO b where b.author=:author", BookDAO.class)
+                    .setParameter("author", authorName)
+                    .list();
+        } catch (Exception ex) {
+            LOG.error(String.format("findByAuthor. book.author=%s", authorName), ex);
+        }
+
+        return bookDAO;
+    }
 }

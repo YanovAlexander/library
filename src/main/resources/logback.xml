@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <property name="HOME_LOG" value="C:\projects\\my-projects\\library\\logs\\library.log"/>
+    <property name="HOME_LOG" value="C:\\projects\\my-projects\\library\\logs\\library.log"/>
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
@@ -25,7 +25,7 @@
         <appender-ref ref="FILE"/>
     </logger>
 
-    <root level="error">
+    <root level="debug">
         <appender-ref ref="CONSOLE"/>
     </root>
 

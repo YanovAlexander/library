@@ -6,7 +6,7 @@
 <hibernate-mapping package="com.library.model.entity">
 
     <class name="BookDAO" table="book">
-        <id name="id" column="id" type="java.lang.Long">
+        <id name="id" column="id" type="java.lang.Integer">
             <generator class="identity"/>
         </id>
 

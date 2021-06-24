@@ -5,7 +5,7 @@ import com.library.dto.Genre;
 import java.util.Objects;
 
 public class BookDAO {
-    private long id;
+    private int id;
     private String author;
     private String name;
     private int countPages;
@@ -17,7 +17,7 @@ public class BookDAO {
     public BookDAO() {
     }
 
-    public BookDAO(long id, String author, String name, int countPages, int publicationYear, String description, Genre genre) {
+    public BookDAO(int id, String author, String name, int countPages, int publicationYear, String description, Genre genre) {
         this.id = id;
         this.author = author;
         this.name = name;
@@ -35,11 +35,11 @@ public class BookDAO {
         this.author = author;
     }
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

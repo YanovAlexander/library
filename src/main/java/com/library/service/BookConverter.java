@@ -38,7 +38,7 @@ public class BookConverter {
 
     private static BookDAO prepareBookDAO(ResultSet resultSet) throws SQLException {
         BookDAO bookDAO = new BookDAO();
-        bookDAO.setId(resultSet.getLong("id"));
+        bookDAO.setId(resultSet.getInt("id"));
         bookDAO.setName(resultSet.getString("name"));
         bookDAO.setAuthor(resultSet.getString("author"));
         bookDAO.setCountPages(resultSet.getInt("count_pages"));
