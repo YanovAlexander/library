@@ -1,33 +1,26 @@
 package com.library.model;
 
 import com.library.model.entity.BookDAO;
-import com.library.service.BookConverter;
-import com.zaxxer.hikari.HikariDataSource;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.sql.*;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-
-import static net.sf.ehcache.CacheManager.ALL_CACHE_MANAGERS;
 
 public class BookRepository implements Repository<BookDAO> {
 
     private final static Logger LOG = LoggerFactory.getLogger(BookRepository.class);
 
-    private final HikariDataSource dataSource;
     private final SessionFactory sessionFactory;
 
     private static final String FIND_ALL = "SELECT id, name, count_pages, publication_year, author, description , genre " +
             "FROM book";
 
-    public BookRepository(HikariDataSource dataSource, SessionFactory sessionFactory) {
-        this.dataSource = dataSource;
+    public BookRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
@@ -53,11 +46,7 @@ public class BookRepository implements Repository<BookDAO> {
     public BookDAO findById(int id) {
         BookDAO bookDAO = null;
         try (Session session = sessionFactory.openSession()) {
-            bookDAO = session.get(BookDAO.class, id);
-            int size = ALL_CACHE_MANAGERS.get(0)
-                    .getCache("Book").getSize();
-            System.out.println("----------------------------------");
-            System.out.println(size);
+            return session.get(BookDAO.class, id);
         } catch (Exception ex) {
             LOG.error(String.format("findById. book.id=%s", id), ex);
         }
@@ -66,14 +55,12 @@ public class BookRepository implements Repository<BookDAO> {
 
     @Override
     public List<BookDAO> findAll() {
-        try (Connection connection = dataSource.getConnection();
-             PreparedStatement statement = connection.prepareStatement(FIND_ALL)) {
-            ResultSet resultSet = statement.executeQuery();
-            return BookConverter.toBookDAOCollection(resultSet);
-        } catch (SQLException e) {
-            e.printStackTrace();
+        try(Session session = sessionFactory.openSession()) {
+            return session.createQuery("SELECT b FROM BookDAO b", BookDAO.class)
+                    .list();
+        } catch (Exception ex) {
+            LOG.error(String.format("findAll."), ex);
         }
-
         return Collections.emptyList();
     }
 
@@ -85,7 +72,8 @@ public class BookRepository implements Repository<BookDAO> {
             session.saveOrUpdate(bookDAO);
             transaction.commit();
         } catch (Exception e) {
-            LOG.error(String.format("update. book.name=%s, book.author=%s", bookDAO.getName(), bookDAO.getAuthor()), e);;
+            LOG.error(String.format("update. book.name=%s, book.author=%s", bookDAO.getName(), bookDAO.getAuthor()), e);
+            ;
             if (Objects.nonNull(transaction)) {
                 transaction.rollback();
             }

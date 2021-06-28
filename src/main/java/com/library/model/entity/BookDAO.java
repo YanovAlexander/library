@@ -4,10 +4,8 @@ import com.library.dto.Genre;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import javax.persistence.Cacheable;
 import java.util.Objects;
 
-@Cacheable
 @Cache(usage = CacheConcurrencyStrategy.READ_ONLY, region = "Book")
 public class BookDAO {
     private int id;

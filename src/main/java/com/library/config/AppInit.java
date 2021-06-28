@@ -12,8 +12,6 @@ public class AppInit  implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        LOG.debug("Init database connection manager");
-        DatabaseConnectionManager.init();
         System.out.println("Database init finished");
         LOG.debug("Database init finished");
         System.out.println("Init hibernate");
