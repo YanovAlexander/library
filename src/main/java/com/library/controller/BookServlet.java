@@ -44,6 +44,6 @@ public class BookServlet extends HttpServlet {
         book.setDescription( req.getParameter("description"));
         book.setGenre(Genre.valueOf(req.getParameter("genre")));
         bookService.addBook(book);
-        req.getRequestDispatcher("/view/index.jsp").forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/books");
     }
 }
