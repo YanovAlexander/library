@@ -1,16 +1,32 @@
 package com.library.model.entity;
 
 import com.library.dto.Genre;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "book")
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY, region = "Book")
 public class BookDAO {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
+    @Column(name = "author")
     private String author;
+    @Column(name = "name")
     private String name;
+    @Column(name = "count_pages")
     private int countPages;
+    @Column(name = "publication_year")
     private int publicationYear;
+    @Column(name = "description")
     private String description;
+    @Column(name = "genre")
+    @Enumerated(EnumType.STRING)
     private Genre genre;
 
 

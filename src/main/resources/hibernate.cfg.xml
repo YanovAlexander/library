@@ -23,6 +23,6 @@
         <property name="hibernate.cache.use_second_level_cache">true</property>
         <property name="hibernate.cache.use_query_cache">true</property>
         <property name="format_sql">true</property>
-        <mapping resource="BookDAO.hbm.xml"/>
+        <mapping class="com.library.model.entity.BookDAO"/>
     </session-factory>
 </hibernate-configuration>
