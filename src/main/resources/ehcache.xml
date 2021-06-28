@@ -2,14 +2,10 @@
     <defaultCache
             maxElementsInMemory="100"
             eternal="false"
-            timeToIdleSecond="20"
-            timeToLiveSecond="100"
     />
 
     <cache name="Book"
            maxElementsInMemory="100"
            eternal="false"
-           timeToIdleSecond="20"
-           timeToLiveSecond="100"
     />
 </ehcache>

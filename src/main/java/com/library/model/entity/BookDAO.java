@@ -1,12 +1,9 @@
 package com.library.model.entity;
 
 import com.library.dto.Genre;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
 
-@Cache(usage = CacheConcurrencyStrategy.READ_ONLY, region = "Book")
 public class BookDAO {
     private int id;
     private String author;

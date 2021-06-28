@@ -6,6 +6,9 @@
 <hibernate-mapping package="com.library.model.entity">
 
     <class name="BookDAO" table="book">
+        <cache usage="read-only"
+               region="Book"/>
+
         <id name="id" column="id" type="java.lang.Integer">
             <generator class="identity"/>
         </id>
