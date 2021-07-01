@@ -28,7 +28,9 @@
     </thead>
     <tbody>
     <tr>
-        <td>${book.author}</td>
+        <td><div class="tooltip">${book.author.firstName} ${book.author.lastName}
+                   <span class="tooltiptext">${book.author.firstName} ${book.author.lastName} ${book.author.gender} ${book.author.birthDate}</span>
+                </div></td>
         <td>${book.name}</td>
         <td>${book.countPages}</td>
         <td>${book.publicationYear}</td>

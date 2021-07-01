@@ -56,3 +56,12 @@ CREATE TABLE author_book (
   CONSTRAINT book_id_fk
    FOREIGN KEY (book_id) REFERENCES book (id)
 );
+
+DROP TABLE author_book;
+
+ALTER TABLE book
+ADD COLUMN author_id int;
+
+ALTER TABLE book
+ADD CONSTRAINT author_id_fk
+   FOREIGN KEY (author_id) REFERENCES author (id);

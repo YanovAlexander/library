@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface Repository<T> {
 
-    int addPublication(T entity);
+    int save(T entity);
 
     T findById(int id);
 

@@ -14,7 +14,11 @@
     Add a book
 </h2>
 <form name="bookForm" method="post" action="/books">
-    Author: <br> <input type="text" name="author"/> <br/>
+    Author: <br> <select id="author" name="authorId">
+            <c:forEach var="author" items="${authors}">
+                <option value="${author.id}">${author.firstName} ${author.lastName}</option>
+            </c:forEach>
+    </select>
     Name: <br> <input type="text" name="name"/> <br/>
     Pages: <br> <input type="number" name="countPages"/> <br/>
     Publication Year: <br> <input type="number" min="1900" max="2099" step="1" value="2016" name="publicationYear"/>

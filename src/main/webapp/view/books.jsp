@@ -18,7 +18,6 @@
     </caption>
     <thead>
     <tr>
-        <th align="left">Author</th>
         <th align="left">Book name</th>
         <th align="left">Pages</th>
         <th align="left">Publication year</th>
@@ -29,7 +28,6 @@
     <tbody>
     <c:forEach var="book" items="${books}">
         <tr>
-            <td>${book.author}</td>
             <td>${book.name}</td>
             <td>${book.countPages}</td>
             <td>${book.publicationYear}</td>

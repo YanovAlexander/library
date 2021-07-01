@@ -16,7 +16,7 @@ public class BookService {
 
     public BookDTO addBook(BookDTO bookDTO) {
         BookDAO bookDAO = BookConverter.toBookDAO(bookDTO);
-        int id = repository.addPublication(bookDAO);
+        int id = repository.save(bookDAO);
         BookDAO created = repository.findById(id);
         return BookConverter.fromBookDAO(created);
     }

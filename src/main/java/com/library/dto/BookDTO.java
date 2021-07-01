@@ -5,7 +5,7 @@ import java.util.Objects;
 public class BookDTO {
 
     private int id;
-    private String author;
+    private AuthorDTO author;
     private String name;
     private int countPages;
     private int publicationYear;
@@ -15,7 +15,7 @@ public class BookDTO {
     public BookDTO() {
     }
 
-    public BookDTO(int id, String author, String name, int countPages, int publicationYear, String description, Genre genre) {
+    public BookDTO(int id, AuthorDTO author, String name, int countPages, int publicationYear, String description, Genre genre) {
         this.id = id;
         this.author = author;
         this.name = name;
@@ -23,14 +23,6 @@ public class BookDTO {
         this.publicationYear = publicationYear;
         this.description = description;
         this.genre = genre;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     public int getId() {
@@ -86,24 +78,19 @@ public class BookDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BookDTO bookDTO = (BookDTO) o;
-        return id == bookDTO.id && countPages == bookDTO.countPages && publicationYear == bookDTO.publicationYear && Objects.equals(author, bookDTO.author) && Objects.equals(name, bookDTO.name) && Objects.equals(description, bookDTO.description) && genre == bookDTO.genre;
+        return id == bookDTO.id && countPages == bookDTO.countPages && publicationYear == bookDTO.publicationYear && Objects.equals(name, bookDTO.name) && Objects.equals(description, bookDTO.description) && genre == bookDTO.genre;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, author, name, countPages, publicationYear, description, genre);
+        return Objects.hash(id, name, countPages, publicationYear, description, genre);
     }
 
-    @Override
-    public String toString() {
-        return "BookDTO{" +
-                "id=" + id +
-                ", author='" + author + '\'' +
-                ", name='" + name + '\'' +
-                ", countPages=" + countPages +
-                ", publicationYear=" + publicationYear +
-                ", description='" + description + '\'' +
-                ", genre=" + genre +
-                '}';
+    public AuthorDTO getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(AuthorDTO author) {
+        this.author = author;
     }
 }

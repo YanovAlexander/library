@@ -38,7 +38,8 @@ public class UpdateBookServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         BookDTO book = new BookDTO();
-        book.setAuthor(req.getParameter("author"));
+        //TODO add author logic
+//        book.setAuthor(req.getParameter("author"));
         book.setName(req.getParameter("name"));
         book.setCountPages(Integer.parseInt(req.getParameter("countPages")));
         book.setPublicationYear(Integer.parseInt(req.getParameter("publicationYear")));

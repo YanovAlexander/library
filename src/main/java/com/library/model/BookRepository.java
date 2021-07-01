@@ -17,15 +17,12 @@ public class BookRepository implements Repository<BookDAO> {
 
     private final SessionFactory sessionFactory;
 
-    private static final String FIND_ALL = "SELECT id, name, count_pages, publication_year, author, description , genre " +
-            "FROM book";
-
     public BookRepository(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
     @Override
-    public int addPublication(BookDAO bookDAO) {
+    public int save(BookDAO bookDAO) {
         Transaction transaction = null;
         int id = 0;
         try (Session session = sessionFactory.openSession()) {
@@ -33,7 +30,7 @@ public class BookRepository implements Repository<BookDAO> {
             id = (int) session.save(bookDAO);
             transaction.commit();
         } catch (Exception e) {
-            LOG.error(String.format("addPublication. book.name=%s, book.author=%s", bookDAO.getName(), bookDAO.getAuthor()), e);
+            LOG.error(String.format("save. book.name=%s", bookDAO.getName()), e);
             if (Objects.nonNull(transaction)) {
                 transaction.rollback();
             }
@@ -72,7 +69,7 @@ public class BookRepository implements Repository<BookDAO> {
             session.saveOrUpdate(bookDAO);
             transaction.commit();
         } catch (Exception e) {
-            LOG.error(String.format("update. book.name=%s, book.author=%s", bookDAO.getName(), bookDAO.getAuthor()), e);
+            LOG.error(String.format("update. book.name=%s, book.id=%s", bookDAO.getName(), bookDAO.getId()), e);
             ;
             if (Objects.nonNull(transaction)) {
                 transaction.rollback();

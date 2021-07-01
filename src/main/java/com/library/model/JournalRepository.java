@@ -21,7 +21,7 @@ public class JournalRepository implements Repository<JournalDAO> {
     }
 
     @Override
-    public int addPublication(JournalDAO journalDAO) {
+    public int save(JournalDAO journalDAO) {
         int id = 0;
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS)) {

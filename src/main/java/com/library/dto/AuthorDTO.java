@@ -1,15 +1,26 @@
 package com.library.dto;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 public class AuthorDTO {
-    public int id;
-    public String firstName;
-    public String lastName;
-    public Gender gender;
-    public LocalDate birthDate;
+    private int id;
+    private String firstName;
+    private String lastName;
+    private Gender gender;
+    private LocalDate birthDate;
+    private Set<BookDTO> books;
 
     public AuthorDTO() {
+    }
+
+    public AuthorDTO(int id, String firstName, String lastName, Gender gender, LocalDate birthDate, Set<BookDTO> books) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.birthDate = birthDate;
+        this.books = books;
     }
 
     public AuthorDTO(int id, String firstName, String lastName, Gender gender, LocalDate birthDate) {
@@ -58,5 +69,13 @@ public class AuthorDTO {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public Set<BookDTO> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<BookDTO> books) {
+        this.books = books;
     }
 }

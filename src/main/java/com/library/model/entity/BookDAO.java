@@ -15,8 +15,9 @@ public class BookDAO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    @Column(name = "author")
-    private String author;
+    @ManyToOne
+    @JoinColumn(name="author_id", nullable=false)
+    private AuthorDAO author;
     @Column(name = "name")
     private String name;
     @Column(name = "count_pages")
@@ -33,7 +34,7 @@ public class BookDAO {
     public BookDAO() {
     }
 
-    public BookDAO(int id, String author, String name, int countPages, int publicationYear, String description, Genre genre) {
+    public BookDAO(int id, AuthorDAO author, String name, int countPages, int publicationYear, String description, Genre genre) {
         this.id = id;
         this.author = author;
         this.name = name;
@@ -41,14 +42,6 @@ public class BookDAO {
         this.publicationYear = publicationYear;
         this.description = description;
         this.genre = genre;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     public int getId() {
@@ -104,24 +97,19 @@ public class BookDAO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BookDAO bookDAO = (BookDAO) o;
-        return id == bookDAO.id && countPages == bookDAO.countPages && publicationYear == bookDAO.publicationYear && Objects.equals(author, bookDAO.author) && Objects.equals(name, bookDAO.name) && Objects.equals(description, bookDAO.description) && genre == bookDAO.genre;
+        return id == bookDAO.id && countPages == bookDAO.countPages && publicationYear == bookDAO.publicationYear && Objects.equals(name, bookDAO.name) && Objects.equals(description, bookDAO.description) && genre == bookDAO.genre;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, author, name, countPages, publicationYear, description, genre);
+        return Objects.hash(id, name, countPages, publicationYear, description, genre);
     }
 
-    @Override
-    public String toString() {
-        return "BookDAO{" +
-                "id=" + id +
-                ", author='" + author + '\'' +
-                ", name='" + name + '\'' +
-                ", countPages=" + countPages +
-                ", publicationYear=" + publicationYear +
-                ", description='" + description + '\'' +
-                ", genre=" + genre +
-                '}';
+    public AuthorDAO getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(AuthorDAO author) {
+        this.author = author;
     }
 }
