@@ -1,16 +1,12 @@
 package com.library.controller;
 
-import com.library.config.HibernateDatabaseConnector;
 import com.library.dto.BookDTO;
 import com.library.dto.Genre;
-import com.library.model.AuthorRepository;
-import com.library.model.BookRepository;
-import com.library.model.Repository;
-import com.library.model.entity.AuthorDAO;
-import com.library.model.entity.BookDAO;
 import com.library.service.AuthorService;
 import com.library.service.BookService;
-import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,20 +16,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/books")
+@WebServlet(urlPatterns = "/books")
+@Configurable
 public class BookServlet extends HttpServlet {
-    private Repository<BookDAO> repository;
-    private Repository<AuthorDAO> authorRepository;
     private BookService bookService;
     private AuthorService authorService;
 
+    public BookServlet() {
+    }
+
+
     @Override
     public void init() throws ServletException {
-        final SessionFactory sessionFactory = HibernateDatabaseConnector.getSessionFactory();
-        this.repository = new BookRepository(sessionFactory);
-        this.bookService = new BookService(repository);
-        this.authorRepository = new AuthorRepository(sessionFactory);
-        this.authorService = new AuthorService(authorRepository);
+        super.init();
+        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
     }
 
     @Override
@@ -50,9 +46,19 @@ public class BookServlet extends HttpServlet {
         book.setName(req.getParameter("name"));
         book.setCountPages(Integer.parseInt(req.getParameter("countPages")));
         book.setPublicationYear(Integer.parseInt(req.getParameter("publicationYear")));
-        book.setDescription( req.getParameter("description"));
+        book.setDescription(req.getParameter("description"));
         book.setGenre(Genre.valueOf(req.getParameter("genre")));
         bookService.addBook(book);
         resp.sendRedirect(req.getContextPath() + "/books");
+    }
+
+    @Autowired
+    public void setBookService(BookService bookService) {
+        this.bookService = bookService;
+    }
+
+    @Autowired
+    public void setAuthorService(AuthorService authorService) {
+        this.authorService = authorService;
     }
 }

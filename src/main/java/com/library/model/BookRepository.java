@@ -1,8 +1,8 @@
 package com.library.model;
 
+import com.library.config.HibernateDatabaseConnector;
 import com.library.model.entity.BookDAO;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,17 +15,17 @@ public class BookRepository implements Repository<BookDAO> {
 
     private final static Logger LOG = LoggerFactory.getLogger(BookRepository.class);
 
-    private final SessionFactory sessionFactory;
+    private final HibernateDatabaseConnector hibernateDatabaseConnector;
 
-    public BookRepository(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public BookRepository(HibernateDatabaseConnector hibernateDatabaseConnector) {
+        this.hibernateDatabaseConnector = hibernateDatabaseConnector;
     }
 
     @Override
     public int save(BookDAO bookDAO) {
         Transaction transaction = null;
         int id = 0;
-        try (Session session = sessionFactory.openSession()) {
+        try (Session session = hibernateDatabaseConnector.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
             id = (int) session.save(bookDAO);
             transaction.commit();
@@ -42,7 +42,7 @@ public class BookRepository implements Repository<BookDAO> {
     @Override
     public BookDAO findById(int id) {
         BookDAO bookDAO = null;
-        try (Session session = sessionFactory.openSession()) {
+        try (Session session = hibernateDatabaseConnector.getSessionFactory().openSession()) {
             return session.get(BookDAO.class, id);
         } catch (Exception ex) {
             LOG.error(String.format("findById. book.id=%s", id), ex);
@@ -52,7 +52,7 @@ public class BookRepository implements Repository<BookDAO> {
 
     @Override
     public List<BookDAO> findAll() {
-        try(Session session = sessionFactory.openSession()) {
+        try(Session session = hibernateDatabaseConnector.getSessionFactory().openSession()) {
             return session.createQuery("SELECT b FROM BookDAO b", BookDAO.class)
                     .list();
         } catch (Exception ex) {
@@ -64,7 +64,7 @@ public class BookRepository implements Repository<BookDAO> {
     @Override
     public void update(BookDAO bookDAO) {
         Transaction transaction = null;
-        try (Session session = sessionFactory.openSession()) {
+        try (Session session = hibernateDatabaseConnector.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
             session.saveOrUpdate(bookDAO);
             transaction.commit();
@@ -79,7 +79,7 @@ public class BookRepository implements Repository<BookDAO> {
 
     public List<BookDAO> findByAuthor(String authorName) {
         List<BookDAO> bookDAO = null;
-        try (Session session = sessionFactory.openSession()) {
+        try (Session session = hibernateDatabaseConnector.getSessionFactory().openSession()) {
             bookDAO = session.createQuery("FROM BookDAO b where b.author=:author", BookDAO.class)
                     .setParameter("author", authorName)
                     .list();

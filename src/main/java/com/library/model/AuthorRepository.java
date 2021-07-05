@@ -1,8 +1,8 @@
 package com.library.model;
 
+import com.library.config.HibernateDatabaseConnector;
 import com.library.model.entity.AuthorDAO;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,10 +12,10 @@ import java.util.List;
 public class AuthorRepository implements Repository<AuthorDAO> {
     private final static Logger LOG = LoggerFactory.getLogger(AuthorRepository.class);
 
-    private final SessionFactory sessionFactory;
+    private final HibernateDatabaseConnector hibernateDatabaseConnector;
 
-    public AuthorRepository(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public AuthorRepository(HibernateDatabaseConnector hibernateDatabaseConnector) {
+        this.hibernateDatabaseConnector = hibernateDatabaseConnector;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class AuthorRepository implements Repository<AuthorDAO> {
 
     @Override
     public AuthorDAO findById(int id) {
-        try (Session session = sessionFactory.openSession()) {
+        try (Session session = hibernateDatabaseConnector.getSessionFactory().openSession()) {
             return session.get(AuthorDAO.class, id);
         } catch (Exception ex) {
             LOG.error(String.format("findById. author.id=%s", id), ex);
@@ -35,7 +35,7 @@ public class AuthorRepository implements Repository<AuthorDAO> {
 
     @Override
     public List<AuthorDAO> findAll() {
-        try(Session session = sessionFactory.openSession()) {
+        try(Session session = hibernateDatabaseConnector.getSessionFactory().openSession()) {
             return session.createQuery("SELECT b FROM AuthorDAO b", AuthorDAO.class)
                     .list();
         } catch (Exception ex) {

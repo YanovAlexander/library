@@ -7,11 +7,13 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.PreDestroy;
+
 public class HibernateDatabaseConnector {
-    private static SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
     private final static Logger LOG = LoggerFactory.getLogger(HibernateDatabaseConnector.class);
 
-    public static synchronized void init() {
+    public HibernateDatabaseConnector() {
         try {
             MetadataSources source = new MetadataSources(new StandardServiceRegistryBuilder().configure().build());
             final Metadata metadata = source.getMetadataBuilder().build();
@@ -20,13 +22,15 @@ public class HibernateDatabaseConnector {
             LOG.error("init. ", e);
         }
     }
-    public static synchronized void destroy() {
+
+    @PreDestroy
+    public synchronized void destroy() {
         if (sessionFactory != null) {
             sessionFactory.close();
         }
     }
 
-    public static SessionFactory getSessionFactory() {
+    public SessionFactory getSessionFactory() {
         return sessionFactory;
     }
 }

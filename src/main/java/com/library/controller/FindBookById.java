@@ -1,11 +1,10 @@
 package com.library.controller;
 
-import com.library.config.HibernateDatabaseConnector;
 import com.library.dto.BookDTO;
-import com.library.model.BookRepository;
-import com.library.model.Repository;
-import com.library.model.entity.BookDAO;
 import com.library.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,15 +14,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/books/findById")
+@Configurable
 public class FindBookById extends HttpServlet {
 
-    private Repository<BookDAO> repository;
     private BookService bookService;
 
     @Override
     public void init() throws ServletException {
-        this.repository = new BookRepository(HibernateDatabaseConnector.getSessionFactory());
-        this.bookService = new BookService(repository);
+        super.init();
+        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
     }
 
     @Override
@@ -32,5 +31,10 @@ public class FindBookById extends HttpServlet {
         BookDTO book = bookService.findById(id);
         req.setAttribute("book", book);
         req.getRequestDispatcher("/view/findById.jsp").forward(req, resp);
+    }
+
+    @Autowired
+    public void setBookService(BookService bookService) {
+        this.bookService = bookService;
     }
 }

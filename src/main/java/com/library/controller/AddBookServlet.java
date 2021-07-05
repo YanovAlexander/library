@@ -1,11 +1,10 @@
 package com.library.controller;
 
-import com.library.config.HibernateDatabaseConnector;
 import com.library.dto.AuthorDTO;
-import com.library.model.AuthorRepository;
-import com.library.model.Repository;
-import com.library.model.entity.AuthorDAO;
 import com.library.service.AuthorService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,14 +15,14 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/books/add")
+@Configurable
 public class AddBookServlet extends HttpServlet {
-    private Repository<AuthorDAO> repository;
     private AuthorService authorService;
 
     @Override
     public void init() throws ServletException {
-        this.repository = new AuthorRepository(HibernateDatabaseConnector.getSessionFactory());
-        this.authorService = new AuthorService(repository);
+        super.init();
+        SpringBeanAutowiringSupport.processInjectionBasedOnCurrentContext(this);
     }
 
     @Override
@@ -31,5 +30,10 @@ public class AddBookServlet extends HttpServlet {
         final List<AuthorDTO> authors = authorService.findAuthors();
         req.setAttribute("authors", authors);
         req.getRequestDispatcher("/view/addBooks.jsp").forward(req, resp);
+    }
+
+    @Autowired
+    public void setAuthorService(AuthorService authorService) {
+        this.authorService = authorService;
     }
 }
