@@ -5,15 +5,18 @@ import com.library.model.entity.AuthorDAO;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collections;
 import java.util.List;
 
+@org.springframework.stereotype.Repository
 public class AuthorRepository implements Repository<AuthorDAO> {
     private final static Logger LOG = LoggerFactory.getLogger(AuthorRepository.class);
 
     private final HibernateDatabaseConnector hibernateDatabaseConnector;
 
+    @Autowired
     public AuthorRepository(HibernateDatabaseConnector hibernateDatabaseConnector) {
         this.hibernateDatabaseConnector = hibernateDatabaseConnector;
     }

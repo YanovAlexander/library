@@ -6,9 +6,11 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PreDestroy;
 
+@Component
 public class HibernateDatabaseConnector {
     private SessionFactory sessionFactory;
     private final static Logger LOG = LoggerFactory.getLogger(HibernateDatabaseConnector.class);

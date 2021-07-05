@@ -6,17 +6,20 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+@org.springframework.stereotype.Repository
 public class BookRepository implements Repository<BookDAO> {
 
     private final static Logger LOG = LoggerFactory.getLogger(BookRepository.class);
 
     private final HibernateDatabaseConnector hibernateDatabaseConnector;
 
+    @Autowired
     public BookRepository(HibernateDatabaseConnector hibernateDatabaseConnector) {
         this.hibernateDatabaseConnector = hibernateDatabaseConnector;
     }

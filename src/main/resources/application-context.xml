@@ -9,26 +9,4 @@
     <context:spring-configured/>
     <context:annotation-config/>
     <context:component-scan base-package="com.library"/>
-
-    <bean id="com.library.hibernateDatabaseConnector"
-          class="com.library.config.HibernateDatabaseConnector"/>
-
-    <bean id="com.library.bookRepository"
-          class="com.library.model.BookRepository">
-        <constructor-arg ref="com.library.hibernateDatabaseConnector"/>
-    </bean>
-
-    <bean id="com.library.bookService"
-          class="com.library.service.BookService"/>
-
-    <bean id="com.library.authorRepository"
-          class="com.library.model.AuthorRepository">
-        <constructor-arg ref="com.library.hibernateDatabaseConnector"/>
-    </bean>
-
-    <bean id="com.library.authorService"
-          class="com.library.service.AuthorService">
-        <constructor-arg ref="com.library.authorRepository"/>
-    </bean>
-
 </beans>
