@@ -1,7 +1,7 @@
 package com.library.service;
 
 import com.library.dto.BookDTO;
-import com.library.model.Repository;
+import com.library.model.BookRepository;
 import com.library.model.entity.BookDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,20 +11,19 @@ import java.util.stream.Collectors;
 
 @Service
 public class BookService {
-    private final Repository<BookDAO> repository;
+    private final BookRepository repository;
     private final BookConverter bookConverter;
 
     @Autowired
-    public BookService(Repository<BookDAO> repository, BookConverter bookConverter) {
+    public BookService(BookRepository repository, BookConverter bookConverter) {
         this.repository = repository;
         this.bookConverter = bookConverter;
     }
 
     public BookDTO addBook(BookDTO bookDTO) {
         BookDAO bookDAO = bookConverter.toBookDAO(bookDTO);
-        int id = repository.save(bookDAO);
-        BookDAO created = repository.findById(id);
-        return bookConverter.fromBookDAO(created);
+        BookDAO savedBook = repository.save(bookDAO);
+        return bookConverter.fromBookDAO(savedBook);
     }
 
     public List<BookDTO> findAll() {
@@ -35,10 +34,11 @@ public class BookService {
     }
 
     public BookDTO findById(int id) {
-        return bookConverter.fromBookDAO(repository.findById(id));
+        return repository.findById(id).map(bookConverter::fromBookDAO)
+                .orElseThrow(() -> new RuntimeException("Book not found"));
     }
 
     public void update(BookDTO bookDTO) {
-        repository.update(bookConverter.toBookDAO(bookDTO));
+        repository.save(bookConverter.toBookDAO(bookDTO));
     }
 }
