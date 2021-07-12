@@ -30,7 +30,7 @@ public class FindBookById extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         BookDTO book = bookService.findById(id);
         req.setAttribute("book", book);
-        req.getRequestDispatcher("/view/findById.jsp").forward(req, resp);
+        req.getRequestDispatcher("/view/showBook.jsp").forward(req, resp);
     }
 
     @Autowired

@@ -6,7 +6,7 @@
         </button>
         <div class="dropdown-content">
             <a href="${pageContext.request.contextPath}/books">Show Books</a>
-            <a href="${pageContext.request.contextPath}/books/add">Add Book</a>
+            <a href="${pageContext.request.contextPath}/books/form/add">Add Book</a>
         </div>
     </div>
     <div class="dropdown">

@@ -36,7 +36,7 @@
                 <button>Details</button>
             </a>
             </td>
-            <td align="center"><a href="/books/update?id=${book.id}">
+            <td align="center"><a href="/books/form/update?id=${book.id}">
                 <button>Update</button>
             </a>
             </td>
