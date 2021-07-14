@@ -5,7 +5,7 @@ import java.util.Objects;
 public class BookDTO {
 
     private int id;
-    private AuthorDTO author;
+    private int authorId;
     private String name;
     private int countPages;
     private int publicationYear;
@@ -15,9 +15,9 @@ public class BookDTO {
     public BookDTO() {
     }
 
-    public BookDTO(int id, AuthorDTO author, String name, int countPages, int publicationYear, String description, Genre genre) {
+    public BookDTO(int id, int authorId, String name, int countPages, int publicationYear, String description, Genre genre) {
         this.id = id;
-        this.author = author;
+        this.authorId = authorId;
         this.name = name;
         this.countPages = countPages;
         this.publicationYear = publicationYear;
@@ -86,11 +86,11 @@ public class BookDTO {
         return Objects.hash(id, name, countPages, publicationYear, description, genre);
     }
 
-    public AuthorDTO getAuthor() {
-        return author;
+    public int getAuthorId() {
+        return authorId;
     }
 
-    public void setAuthor(AuthorDTO author) {
-        this.author = author;
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
     }
 }

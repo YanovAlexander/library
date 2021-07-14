@@ -1,7 +1,6 @@
 package com.library.controller;
 
 import com.library.dto.BookDTO;
-import com.library.dto.Genre;
 import com.library.service.AuthorService;
 import com.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,18 +38,18 @@ public class BookServlet extends HttpServlet {
         req.getRequestDispatcher("/view/books.jsp").forward(req, resp);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        BookDTO book = new BookDTO();
-        book.setAuthor(authorService.getAuthor(Integer.parseInt(req.getParameter("authorId"))));
-        book.setName(req.getParameter("name"));
-        book.setCountPages(Integer.parseInt(req.getParameter("countPages")));
-        book.setPublicationYear(Integer.parseInt(req.getParameter("publicationYear")));
-        book.setDescription(req.getParameter("description"));
-        book.setGenre(Genre.valueOf(req.getParameter("genre")));
-        bookService.addBook(book);
-        resp.sendRedirect(req.getContextPath() + "/books");
-    }
+//    @Override
+//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        BookDTO book = new BookDTO();
+//        book.setAuthor(authorService.getAuthor(Integer.parseInt(req.getParameter("authorId"))));
+//        book.setName(req.getParameter("name"));
+//        book.setCountPages(Integer.parseInt(req.getParameter("countPages")));
+//        book.setPublicationYear(Integer.parseInt(req.getParameter("publicationYear")));
+//        book.setDescription(req.getParameter("description"));
+//        book.setGenre(Genre.valueOf(req.getParameter("genre")));
+//        bookService.addBook(book);
+//        resp.sendRedirect(req.getContextPath() + "/books");
+//    }
 
     @Autowired
     public void setBookService(BookService bookService) {

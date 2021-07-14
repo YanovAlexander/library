@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BookConverter {
-    public BookDAO toBookDAO(BookDTO bookDTO) {
-        return new BookDAO(bookDTO.getId(), fromAuthorDTO(bookDTO.getAuthor()), bookDTO.getName(), bookDTO.getCountPages(),
+    public BookDAO toBookDAO(BookDTO bookDTO, AuthorDTO author) {
+        return new BookDAO(bookDTO.getId(), fromAuthorDTO(author), bookDTO.getName(), bookDTO.getCountPages(),
                 bookDTO.getPublicationYear(), bookDTO.getDescription(), bookDTO.getGenre());
     }
 
     public BookDTO fromBookDAO(BookDAO bookDAO) {
-        return new BookDTO(bookDAO.getId(), fromAuthorDAO(bookDAO.getAuthor()), bookDAO.getName(), bookDAO.getCountPages(),
+        return new BookDTO(bookDAO.getId(), fromAuthorDAO(bookDAO.getAuthor()).getId(), bookDAO.getName(), bookDAO.getCountPages(),
                 bookDAO.getPublicationYear(), bookDAO.getDescription(), bookDAO.getGenre());
     }
 

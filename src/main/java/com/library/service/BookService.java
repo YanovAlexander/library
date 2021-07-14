@@ -1,5 +1,6 @@
 package com.library.service;
 
+import com.library.dto.AuthorDTO;
 import com.library.dto.BookDTO;
 import com.library.model.BookRepository;
 import com.library.model.entity.BookDAO;
@@ -20,11 +21,11 @@ public class BookService {
         this.bookConverter = bookConverter;
     }
 
-    public BookDTO addBook(BookDTO bookDTO) {
-        BookDAO bookDAO = bookConverter.toBookDAO(bookDTO);
-        BookDAO savedBook = repository.save(bookDAO);
-        return bookConverter.fromBookDAO(savedBook);
-    }
+//    public BookDTO addBook(BookDTO bookDTO) {
+//        BookDAO bookDAO = bookConverter.toBookDAO(bookDTO, author);
+//        BookDAO savedBook = repository.save(bookDAO);
+//        return bookConverter.fromBookDAO(savedBook);
+//    }
 
     public List<BookDTO> findAll() {
         final List<BookDAO> books = repository.findAll();
@@ -38,7 +39,7 @@ public class BookService {
                 .orElseThrow(() -> new RuntimeException("Book not found"));
     }
 
-    public void update(BookDTO bookDTO) {
-        repository.save(bookConverter.toBookDAO(bookDTO));
+    public void update(BookDTO bookDTO, AuthorDTO author) {
+        repository.save(bookConverter.toBookDAO(bookDTO, author));
     }
 }

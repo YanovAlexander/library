@@ -16,17 +16,7 @@
 </h2>
 <form:form name="bookForm" method="post" action="/books/update" modelAttribute="book">
     <form:input type="hidden" path="id" name="id" value='${book.id}'/>
-    Author: <form:select path="author" id="author" name="authorId">
-              <c:forEach var="author" items="${authors}">
-                  <c:choose>
-                      <c:when test="${author.id==book.author.id}">
-                          <form:option selected="selected" value="${author}">${author.firstName} ${author.lastName}</form:option>
-                      </c:when>
-                      <c:otherwise>
-                          <form:option value="${author}">${author.firstName} ${author.lastName}</form:option>
-                      </c:otherwise>
-                  </c:choose>
-              </c:forEach>
+    Author: <form:select path="authorId" items="${authors}" itemLabel="fullName" itemValue="id">
             </form:select>
     Name: <form:input type="text" name="name" path="name" placeholder="<c:out value='${book.name}'/>"/> <br/>
     Pages: <form:input type="number" name="countPages" path="countPages" placeholder="${book.countPages}"/> <br/>

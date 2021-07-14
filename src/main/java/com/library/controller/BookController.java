@@ -8,7 +8,6 @@ import com.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
@@ -49,7 +48,7 @@ public class BookController {
 
     @PostMapping("/update")
     public RedirectView update(@ModelAttribute("book") BookDTO book) {
-        bookService.update(book);
+        bookService.update(book, authorService.getAuthor(book.getAuthorId()));
         return new RedirectView("/books");
     }
 
@@ -57,9 +56,5 @@ public class BookController {
     public BookDTO defaultBook() {
         return new BookDTO();
     }
-
-    @InitBinder("author")
-    public void authorBinder(WebDataBinder binder) {
-
-    }
 }
+

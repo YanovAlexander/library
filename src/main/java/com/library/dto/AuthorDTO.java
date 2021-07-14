@@ -7,6 +7,7 @@ public class AuthorDTO {
     private int id;
     private String firstName;
     private String lastName;
+    private String fullName;
     private Gender gender;
     private LocalDate birthDate;
     private Set<BookDTO> books;
@@ -77,5 +78,9 @@ public class AuthorDTO {
 
     public void setBooks(Set<BookDTO> books) {
         this.books = books;
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 }
