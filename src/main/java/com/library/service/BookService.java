@@ -21,11 +21,11 @@ public class BookService {
         this.bookConverter = bookConverter;
     }
 
-//    public BookDTO addBook(BookDTO bookDTO) {
-//        BookDAO bookDAO = bookConverter.toBookDAO(bookDTO, author);
-//        BookDAO savedBook = repository.save(bookDAO);
-//        return bookConverter.fromBookDAO(savedBook);
-//    }
+    public BookDTO addBook(BookDTO bookDTO, AuthorDTO author) {
+        BookDAO bookDAO = bookConverter.toBookDAO(bookDTO, author);
+        BookDAO savedBook = repository.save(bookDAO);
+        return bookConverter.fromBookDAO(savedBook);
+    }
 
     public List<BookDTO> findAll() {
         final List<BookDAO> books = repository.findAll();

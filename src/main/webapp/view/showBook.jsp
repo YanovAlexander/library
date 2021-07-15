@@ -28,8 +28,8 @@
     </thead>
     <tbody>
     <tr>
-        <td><div class="tooltip">${book.author.firstName} ${book.author.lastName}
-                   <span class="tooltiptext">${book.author.firstName} ${book.author.lastName} ${book.author.gender} ${book.author.birthDate}</span>
+        <td><div class="tooltip">${author.firstName} ${author.lastName}
+                   <span class="tooltiptext">${author.firstName} ${author.lastName} ${author.gender} ${author.birthDate}</span>
                 </div></td>
         <td>${book.name}</td>
         <td>${book.countPages}</td>

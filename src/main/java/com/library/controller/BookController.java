@@ -27,6 +27,28 @@ public class BookController {
         this.bookService = bookService;
     }
 
+    @GetMapping
+    public String showBooksPage(Model model) {
+        List<BookDTO> books = bookService.findAll();
+        model.addAttribute("books", books);
+        return "books";
+    }
+
+    @PostMapping
+    public RedirectView addBook(@ModelAttribute("book") BookDTO book) {
+        bookService.addBook(book, authorService.getAuthor(book.getAuthorId()));
+        return new RedirectView("/books");
+    }
+
+    @GetMapping(path = "/findById")
+    public String findBook(@RequestParam(name = "id") Integer id, Model model) {
+        BookDTO book = bookService.findById(id);
+        final AuthorDTO author = authorService.getAuthor(book.getAuthorId());
+        model.addAttribute("book", book);
+        model.addAttribute("author", author);
+        return "showBook";
+    }
+
 
     @GetMapping(path = "/form/add")
     public ModelAndView showAddFormBookPage(ModelAndView model) {
