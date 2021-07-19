@@ -5,6 +5,8 @@ import com.library.dto.BookDTO;
 import com.library.dto.enums.Genre;
 import com.library.service.AuthorService;
 import com.library.service.BookService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,8 @@ import java.util.List;
 @RequestMapping(path = "/books")
 public class BookController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(BookController.class);
+
     private final AuthorService authorService;
     private final BookService bookService;
 
@@ -29,6 +33,7 @@ public class BookController {
 
     @GetMapping
     public String showBooksPage(Model model) {
+        LOGGER.info("showBookPage.");
         List<BookDTO> books = bookService.findAll();
         model.addAttribute("books", books);
         return "books";
