@@ -1,6 +1,6 @@
 package com.library.model.entity;
 
-import com.library.dto.Genre;
+import com.library.dto.enums.Genre;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 

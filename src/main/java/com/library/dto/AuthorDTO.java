@@ -1,5 +1,7 @@
 package com.library.dto;
 
+import com.library.dto.enums.Gender;
+
 import java.time.LocalDate;
 import java.util.Set;
 

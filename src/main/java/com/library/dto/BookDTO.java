@@ -1,5 +1,7 @@
 package com.library.dto;
 
+import com.library.dto.enums.Genre;
+
 import java.util.Objects;
 
 public class BookDTO {

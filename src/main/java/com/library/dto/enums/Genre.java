@@ -1,4 +1,4 @@
-package com.library.dto;
+package com.library.dto.enums;
 
 public enum Genre {
     ROMANCE,

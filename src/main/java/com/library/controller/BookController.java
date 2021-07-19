@@ -2,7 +2,7 @@ package com.library.controller;
 
 import com.library.dto.AuthorDTO;
 import com.library.dto.BookDTO;
-import com.library.dto.Genre;
+import com.library.dto.enums.Genre;
 import com.library.service.AuthorService;
 import com.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;

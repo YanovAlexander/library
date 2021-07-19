@@ -1,6 +1,6 @@
 package com.library.model.entity;
 
-import com.library.dto.Gender;
+import com.library.dto.enums.Gender;
 
 import javax.persistence.*;
 import java.time.LocalDate;

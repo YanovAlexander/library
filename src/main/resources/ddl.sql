@@ -65,3 +65,15 @@ ADD COLUMN author_id int;
 ALTER TABLE book
 ADD CONSTRAINT author_id_fk
    FOREIGN KEY (author_id) REFERENCES author (id);
+
+CREATE TABLE users (
+  id serial NOT NULL PRIMARY KEY,
+  first_name varchar(250) not null,
+  last_name varchar(250) not null,
+  email varchar(250) not null,
+  user_role varchar(50) not null,
+  user_status varchar(50) not null,
+  password varchar(250) not null
+);
+
+ALTER TABLE users ADD CONSTRAINT email_unique UNIQUE (email);
