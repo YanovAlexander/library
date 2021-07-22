@@ -15,7 +15,7 @@ public class BookDAO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name="author_id", nullable=false)
     private AuthorDAO author;
     @Column(name = "name")
