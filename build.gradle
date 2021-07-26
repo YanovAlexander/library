@@ -35,4 +35,5 @@ dependencies {
     implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: "${tomcatJasperVersion}"
     testImplementation group: 'com.h2database', name: 'h2', version: "${h2Version}"
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
 }
