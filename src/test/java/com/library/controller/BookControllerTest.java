@@ -11,6 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -66,6 +67,14 @@ class BookControllerTest {
         //then
         mvc.perform(MockMvcRequestBuilders.get("/books").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is3xxRedirection());
+    }
+
+    @WithMockUser(roles = {"USER"})
+    @Test
+    void testShowAddFormBookPageShouldReturnPermissionDenied() throws Exception {
+        //then
+        mvc.perform(MockMvcRequestBuilders.get("/books/form/add").contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().is(HttpStatus.FORBIDDEN.value()));
     }
 
     @WithMockUser(roles = {"USER"})

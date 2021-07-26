@@ -4,6 +4,7 @@ import com.library.dto.enums.UserRole;
 import com.library.dto.enums.UserStatus;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import java.util.Objects;
 
@@ -20,8 +21,9 @@ public class User {
     @NotEmpty
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "email")
     @NotEmpty
+    @Email(regexp = ".+@.+\\..+")
+    @Column(name = "email")
     private String email;
     @Column(name = "user_role")
     @Enumerated(EnumType.STRING)

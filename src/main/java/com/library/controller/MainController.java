@@ -28,7 +28,7 @@ public class MainController {
         }
 
         if (logout != null) {
-            model.addAttribute("message", "Ypu have been logged out");
+            model.addAttribute("message", "You have been logged out");
         }
 
         return "login";

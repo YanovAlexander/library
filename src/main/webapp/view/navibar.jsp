@@ -1,3 +1,4 @@
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <div class="navbar">
     <a href="${pageContext.request.contextPath}/">Home</a>
     <div class="dropdown">
@@ -6,7 +7,9 @@
         </button>
         <div class="dropdown-content">
             <a href="${pageContext.request.contextPath}/books">Show Books</a>
+            <security:authorize access="hasRole('ROLE_ADMIN')">
             <a href="${pageContext.request.contextPath}/books/form/add">Add Book</a>
+            </security:authorize>
         </div>
     </div>
     <div class="dropdown">
