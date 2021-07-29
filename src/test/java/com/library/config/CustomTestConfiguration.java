@@ -1,7 +1,7 @@
 package com.library.config;
 
-import com.library.model.BookRepository;
-import com.library.model.UserRepository;
+import com.library.model.repository.BookRepository;
+import com.library.model.repository.UserRepository;
 import com.library.service.BookConverter;
 import com.library.service.BookService;
 import com.library.service.UserService;

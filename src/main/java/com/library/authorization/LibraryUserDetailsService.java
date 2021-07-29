@@ -1,6 +1,6 @@
 package com.library.authorization;
 
-import com.library.model.UserRepository;
+import com.library.model.repository.UserRepository;
 import com.library.model.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

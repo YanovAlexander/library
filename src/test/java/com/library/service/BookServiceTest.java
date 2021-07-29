@@ -4,7 +4,7 @@ import com.library.BooksUtil;
 import com.library.config.CustomTestConfiguration;
 import com.library.dto.AuthorDTO;
 import com.library.dto.BookDTO;
-import com.library.model.BookRepository;
+import com.library.model.repository.BookRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

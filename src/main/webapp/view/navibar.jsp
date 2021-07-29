@@ -8,7 +8,7 @@
         <div class="dropdown-content">
             <a href="${pageContext.request.contextPath}/books">Show Books</a>
             <security:authorize access="hasRole('ROLE_ADMIN')">
-            <a href="${pageContext.request.contextPath}/books/form/add">Add Book</a>
+                <a href="${pageContext.request.contextPath}/books/form/add">Add Book</a>
             </security:authorize>
         </div>
     </div>
@@ -17,7 +17,7 @@
             <i></i>
         </button>
         <div class="dropdown-content">
-            <a href="#">Show Journals</a>
+            <a href="${pageContext.request.contextPath}/journals">Show Journals</a>
         </div>
     </div>
     <div style="display: flex; justify-content: flex-end">

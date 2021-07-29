@@ -1,15 +1,12 @@
 package com.library.model.entity;
 
 import com.library.dto.enums.Genre;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "book")
-@Cache(usage = CacheConcurrencyStrategy.READ_ONLY, region = "Book")
 public class BookDAO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

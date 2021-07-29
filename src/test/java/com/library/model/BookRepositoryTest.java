@@ -2,6 +2,8 @@ package com.library.model;
 
 import com.library.BooksUtil;
 import com.library.model.entity.BookDAO;
+import com.library.model.repository.AuthorRepository;
+import com.library.model.repository.BookRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
