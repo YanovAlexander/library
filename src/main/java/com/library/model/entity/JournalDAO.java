@@ -16,7 +16,7 @@ public class JournalDAO {
     private String name;
     @Column(name = "count_pages")
     private int countPages;
-    @Column(name = "publication_year")
+    @Column(name = "year")
     private int year;
     @Column(name = "description")
     private String description;
