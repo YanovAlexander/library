@@ -5,19 +5,33 @@ import com.library.model.entity.JournalDAO;
 import java.util.Objects;
 
 public class JournalDTO {
-    private long id;
+    private int id;
     private String name;
     private int countPages;
     private int year;
     private String description;
     private JournalType journalType;
-    private int number;
+    private int journalNumber;
 
-    public long getId() {
+    public JournalDTO() {
+    }
+
+    public JournalDTO(int id, String name, int countPages, int year, String description, JournalType journalType,
+                      int journalNumber) {
+        this.id = id;
+        this.name = name;
+        this.countPages = countPages;
+        this.year = year;
+        this.description = description;
+        this.journalType = journalType;
+        this.journalNumber = journalNumber;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -61,12 +75,12 @@ public class JournalDTO {
         this.journalType = journalType;
     }
 
-    public int getNumber() {
-        return number;
+    public int getJournalNumber() {
+        return journalNumber;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setJournalNumber(int journalNumber) {
+        this.journalNumber = journalNumber;
     }
 
     @Override
@@ -74,11 +88,11 @@ public class JournalDTO {
         if (this == o) return true;
         if (!(o instanceof JournalDAO)) return false;
         JournalDAO that = (JournalDAO) o;
-        return getCountPages() == that.getCountPages() && getYear() == that.getYear() && getNumber() == that.getNumber() && Objects.equals(getName(), that.getName()) && Objects.equals(getDescription(), that.getDescription()) && getJournalType() == that.getJournalType();
+        return getCountPages() == that.getCountPages() && getYear() == that.getYear() && getJournalNumber() == that.getJournalNumber() && Objects.equals(getName(), that.getName()) && Objects.equals(getDescription(), that.getDescription()) && getJournalType() == that.getJournalType();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getCountPages(), getYear(), getDescription(), getJournalType(), getNumber());
+        return Objects.hash(getName(), getCountPages(), getYear(), getDescription(), getJournalType(), getJournalNumber());
     }
 }

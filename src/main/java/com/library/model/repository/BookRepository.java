@@ -1,4 +1,4 @@
-package com.library.model;
+package com.library.model.repository;
 
 import com.library.model.entity.BookDAO;
 import org.springframework.data.jpa.repository.JpaRepository;

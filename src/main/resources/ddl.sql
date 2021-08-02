@@ -77,3 +77,12 @@ CREATE TABLE users (
 );
 
 ALTER TABLE users ADD CONSTRAINT email_unique UNIQUE (email);
+
+ALTER TABLE journal
+RENAME COLUMN number TO journal_number;
+
+ALTER TABLE journal
+ADD COLUMN journal_type varchar(255);
+
+ALTER TABLE journal
+DROP COLUMN genre;

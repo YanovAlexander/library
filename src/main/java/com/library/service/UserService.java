@@ -3,7 +3,7 @@ package com.library.service;
 import com.library.dto.enums.UserRole;
 import com.library.dto.enums.UserStatus;
 import com.library.exceptions.UserAlreadyExistException;
-import com.library.model.UserRepository;
+import com.library.model.repository.UserRepository;
 import com.library.model.entity.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

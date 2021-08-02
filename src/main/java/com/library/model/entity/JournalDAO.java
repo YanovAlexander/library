@@ -2,22 +2,49 @@ package com.library.model.entity;
 
 import com.library.dto.JournalType;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "journal")
 public class JournalDAO {
-    private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "count_pages")
     private int countPages;
+    @Column(name = "year")
     private int year;
+    @Column(name = "description")
     private String description;
+    @Column(name = "journal_type")
+    @Enumerated(EnumType.STRING)
     private JournalType journalType;
-    private int number;
+    @Column(name = "journal_number")
+    private int journalNumber;
 
-    public long getId() {
+    public JournalDAO() {
+    }
+
+    public JournalDAO(int id, String name, int countPages, int year, String description, JournalType journalType,
+                      int journalNumber) {
+        this.id = id;
+        this.name = name;
+        this.countPages = countPages;
+        this.year = year;
+        this.description = description;
+        this.journalType = journalType;
+        this.journalNumber = journalNumber;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -61,12 +88,12 @@ public class JournalDAO {
         this.journalType = journalType;
     }
 
-    public int getNumber() {
-        return number;
+    public int getJournalNumber() {
+        return journalNumber;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setJournalNumber(int number) {
+        this.journalNumber = number;
     }
 
     @Override
@@ -74,11 +101,11 @@ public class JournalDAO {
         if (this == o) return true;
         if (!(o instanceof JournalDAO)) return false;
         JournalDAO that = (JournalDAO) o;
-        return getCountPages() == that.getCountPages() && getYear() == that.getYear() && getNumber() == that.getNumber() && Objects.equals(getName(), that.getName()) && Objects.equals(getDescription(), that.getDescription()) && getJournalType() == that.getJournalType();
+        return getCountPages() == that.getCountPages() && getYear() == that.getYear() && getJournalNumber() == that.getJournalNumber() && Objects.equals(getName(), that.getName()) && Objects.equals(getDescription(), that.getDescription()) && getJournalType() == that.getJournalType();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getCountPages(), getYear(), getDescription(), getJournalType(), getNumber());
+        return Objects.hash(getName(), getCountPages(), getYear(), getDescription(), getJournalType(), getJournalNumber());
     }
 }

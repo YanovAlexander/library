@@ -2,7 +2,7 @@ package com.library.service;
 
 import com.library.dto.AuthorDTO;
 import com.library.dto.BookDTO;
-import com.library.model.BookRepository;
+import com.library.model.repository.BookRepository;
 import com.library.model.entity.BookDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
