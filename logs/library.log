@@ -1,0 +1,229 @@
+2021-07-19 21:28:14,292 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 22596 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-19 21:28:14,294 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-19 21:28:14,294 INFO com.library.Application [main] No active profile set, falling back to default profiles: default
+2021-07-19 21:28:24,769 INFO com.library.Application [main] Started Application in 11.183 seconds (JVM running for 12.506)
+2021-07-19 21:29:22,612 INFO com.library.controller.BookController [http-nio-8080-exec-9] showBookPage.
+2021-07-22 20:37:27,363 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 16052 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:37:27,365 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:37:27,370 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:37:33,694 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 16052 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:37:33,695 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:37:33,696 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:39:34,365 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 13204 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:39:34,366 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:39:34,370 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:39:41,422 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 7.792 seconds (JVM running for 10.117)
+2021-07-22 20:44:25,636 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 13796 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:44:25,636 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:44:25,643 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:44:34,089 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 9.235 seconds (JVM running for 11.621)
+2021-07-22 20:51:28,006 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 9584 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:51:28,007 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:51:28,009 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:51:32,576 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 9584 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:51:32,577 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:51:32,578 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:52:16,590 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 8708 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:52:16,591 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:52:16,594 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:52:22,779 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 6.752 seconds (JVM running for 8.722)
+2021-07-22 20:53:19,069 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 9988 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:53:19,070 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:53:19,072 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:53:23,584 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 9988 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:53:23,584 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:53:23,586 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:53:57,747 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 3508 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:53:57,748 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:53:57,750 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:54:03,986 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 6.828 seconds (JVM running for 8.972)
+2021-07-22 20:56:03,466 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 7904 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:56:03,467 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:56:03,472 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:56:09,308 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 6.551 seconds (JVM running for 8.773)
+2021-07-22 20:58:02,210 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 8496 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:58:02,211 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:58:02,213 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 20:58:06,298 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 8496 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 20:58:06,299 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 20:58:06,301 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:00:44,719 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 19452 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:00:44,720 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:00:44,723 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:03:53,485 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 17376 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:03:53,486 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:03:53,488 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:04:05,164 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 12.112 seconds (JVM running for 14.07)
+2021-07-22 21:04:48,916 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 8940 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:04:48,916 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:04:48,919 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:05:00,847 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 12.354 seconds (JVM running for 14.338)
+2021-07-22 21:06:14,600 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 13540 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:06:14,601 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:06:14,607 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:06:27,848 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 13.795 seconds (JVM running for 16.628)
+2021-07-22 21:07:31,699 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 13384 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:07:31,700 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:07:31,703 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:07:41,542 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 10.293 seconds (JVM running for 12.535)
+2021-07-22 21:09:10,327 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 7916 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:09:10,328 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:09:10,334 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:09:20,697 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 10.928 seconds (JVM running for 13.198)
+2021-07-22 21:11:29,955 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 12296 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:11:29,956 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:11:29,959 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:11:40,729 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 11.251 seconds (JVM running for 13.625)
+2021-07-22 21:13:52,806 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 16560 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:13:52,807 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:13:52,808 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:13:59,261 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 7.157 seconds (JVM running for 9.287)
+2021-07-22 21:14:13,201 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 15868 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:14:13,202 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:14:13,208 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:14:19,174 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 6.523 seconds (JVM running for 8.524)
+2021-07-22 21:14:48,604 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 16552 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:14:48,605 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:14:48,608 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:14:54,759 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 6.732 seconds (JVM running for 8.575)
+2021-07-22 21:16:31,625 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 14544 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:16:31,626 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:16:31,630 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:16:38,224 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 7.309 seconds (JVM running for 9.61)
+2021-07-22 21:16:55,575 INFO com.library.model.BookRepositoryTest [main] Starting BookRepositoryTest using Java 11.0.4 on EPUAKYIW3943 with PID 5160 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-22 21:16:55,576 DEBUG com.library.model.BookRepositoryTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-22 21:16:55,579 INFO com.library.model.BookRepositoryTest [main] No active profile set, falling back to default profiles: default
+2021-07-22 21:17:02,164 INFO com.library.model.BookRepositoryTest [main] Started BookRepositoryTest in 7.314 seconds (JVM running for 9.675)
+2021-07-26 20:03:36,830 INFO com.library.controller.BookControllerTest [main] Starting BookControllerTest using Java 11.0.4 on EPUAKYIW3943 with PID 13688 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 20:03:36,831 DEBUG com.library.controller.BookControllerTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 20:03:36,833 INFO com.library.controller.BookControllerTest [main] No active profile set, falling back to default profiles: default
+2021-07-26 20:03:49,920 INFO com.library.controller.BookControllerTest [main] Started BookControllerTest in 13.507 seconds (JVM running for 15.617)
+2021-07-26 20:04:55,448 INFO com.library.controller.BookControllerTest [main] Starting BookControllerTest using Java 11.0.4 on EPUAKYIW3943 with PID 8536 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 20:04:55,449 DEBUG com.library.controller.BookControllerTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 20:04:55,452 INFO com.library.controller.BookControllerTest [main] No active profile set, falling back to default profiles: default
+2021-07-26 20:05:08,731 INFO com.library.controller.BookControllerTest [main] Started BookControllerTest in 13.777 seconds (JVM running for 16.702)
+2021-07-26 20:06:11,617 INFO com.library.controller.BookControllerTest [main] Starting BookControllerTest using Java 11.0.4 on EPUAKYIW3943 with PID 18140 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 20:06:11,619 DEBUG com.library.controller.BookControllerTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 20:06:11,622 INFO com.library.controller.BookControllerTest [main] No active profile set, falling back to default profiles: default
+2021-07-26 20:06:24,195 INFO com.library.controller.BookControllerTest [main] Started BookControllerTest in 13.054 seconds (JVM running for 15.968)
+2021-07-26 20:07:55,908 INFO com.library.controller.BookControllerTest [main] Starting BookControllerTest using Java 11.0.4 on EPUAKYIW3943 with PID 6180 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 20:07:55,909 DEBUG com.library.controller.BookControllerTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 20:07:55,912 INFO com.library.controller.BookControllerTest [main] No active profile set, falling back to default profiles: default
+2021-07-26 20:08:06,673 INFO com.library.controller.BookControllerTest [main] Started BookControllerTest in 11.167 seconds (JVM running for 13.289)
+2021-07-26 20:08:06,937 INFO com.library.controller.BookController [main] showBookPage.
+2021-07-26 20:08:15,571 INFO com.library.controller.BookControllerTest [main] Starting BookControllerTest using Java 11.0.4 on EPUAKYIW3943 with PID 11412 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 20:08:15,571 DEBUG com.library.controller.BookControllerTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 20:08:15,576 INFO com.library.controller.BookControllerTest [main] No active profile set, falling back to default profiles: default
+2021-07-26 20:08:28,301 INFO com.library.controller.BookControllerTest [main] Started BookControllerTest in 13.321 seconds (JVM running for 16.259)
+2021-07-26 20:08:28,668 INFO com.library.controller.BookController [main] showBookPage.
+2021-07-26 20:09:51,217 INFO com.library.controller.BookControllerTest [main] Starting BookControllerTest using Java 11.0.4 on EPUAKYIW3943 with PID 19352 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 20:09:51,218 DEBUG com.library.controller.BookControllerTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 20:09:51,222 INFO com.library.controller.BookControllerTest [main] No active profile set, falling back to default profiles: default
+2021-07-26 20:10:03,009 INFO com.library.controller.BookControllerTest [main] Started BookControllerTest in 12.444 seconds (JVM running for 15.214)
+2021-07-26 20:11:00,260 INFO com.library.controller.BookControllerTest [main] Starting BookControllerTest using Java 11.0.4 on EPUAKYIW3943 with PID 1768 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 20:11:00,262 DEBUG com.library.controller.BookControllerTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 20:11:00,273 INFO com.library.controller.BookControllerTest [main] No active profile set, falling back to default profiles: default
+2021-07-26 20:11:12,192 INFO com.library.controller.BookControllerTest [main] Started BookControllerTest in 12.47 seconds (JVM running for 14.709)
+2021-07-26 20:12:15,640 INFO com.library.controller.BookControllerTest [main] Starting BookControllerTest using Java 11.0.4 on EPUAKYIW3943 with PID 18736 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 20:12:15,641 DEBUG com.library.controller.BookControllerTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 20:12:15,644 INFO com.library.controller.BookControllerTest [main] No active profile set, falling back to default profiles: default
+2021-07-26 20:12:25,120 INFO com.library.controller.BookControllerTest [main] Started BookControllerTest in 9.98 seconds (JVM running for 12.276)
+2021-07-26 20:21:24,558 INFO com.library.controller.BookControllerTest [main] Starting BookControllerTest using Java 11.0.4 on EPUAKYIW3943 with PID 18000 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 20:21:24,559 DEBUG com.library.controller.BookControllerTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 20:21:24,560 INFO com.library.controller.BookControllerTest [main] No active profile set, falling back to default profiles: default
+2021-07-26 20:21:35,045 INFO com.library.controller.BookControllerTest [main] Started BookControllerTest in 10.828 seconds (JVM running for 12.437)
+2021-07-26 21:06:02,848 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 8628 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 21:06:02,850 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 21:06:02,850 INFO com.library.Application [main] No active profile set, falling back to default profiles: default
+2021-07-26 21:06:13,706 INFO com.library.Application [main] Started Application in 11.544 seconds (JVM running for 12.907)
+2021-07-26 21:10:05,472 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 8532 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 21:10:05,473 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 21:10:05,473 INFO com.library.Application [main] No active profile set, falling back to default profiles: default
+2021-07-26 21:10:16,447 INFO com.library.Application [main] Started Application in 11.644 seconds (JVM running for 12.621)
+2021-07-26 21:10:54,079 INFO com.library.controller.BookController [http-nio-8080-exec-7] showBookPage.
+2021-07-26 21:11:02,479 INFO com.library.controller.BookController [http-nio-8080-exec-3] showBookPage.
+2021-07-26 21:11:16,105 INFO com.library.controller.BookController [http-nio-8080-exec-1] showBookPage.
+2021-07-26 21:14:18,746 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 16920 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 21:14:18,747 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 21:14:18,748 INFO com.library.Application [main] No active profile set, falling back to default profiles: default
+2021-07-26 21:14:29,275 INFO com.library.Application [main] Started Application in 11.234 seconds (JVM running for 12.451)
+2021-07-26 21:19:33,789 INFO com.library.controller.BookControllerTest [main] Starting BookControllerTest using Java 11.0.4 on EPUAKYIW3943 with PID 3980 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 21:19:33,790 DEBUG com.library.controller.BookControllerTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 21:19:33,793 INFO com.library.controller.BookControllerTest [main] No active profile set, falling back to default profiles: default
+2021-07-26 21:19:45,043 INFO com.library.controller.BookControllerTest [main] Started BookControllerTest in 11.678 seconds (JVM running for 13.648)
+2021-07-26 21:21:21,764 INFO com.library.controller.BookControllerTest [main] Starting BookControllerTest using Java 11.0.4 on EPUAKYIW3943 with PID 5480 (started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 21:21:21,765 DEBUG com.library.controller.BookControllerTest [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 21:21:21,768 INFO com.library.controller.BookControllerTest [main] No active profile set, falling back to default profiles: default
+2021-07-26 21:21:33,027 INFO com.library.controller.BookControllerTest [main] Started BookControllerTest in 11.645 seconds (JVM running for 13.678)
+2021-07-26 21:22:20,718 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 19664 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 21:22:20,725 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 21:22:20,725 INFO com.library.Application [main] No active profile set, falling back to default profiles: default
+2021-07-26 21:22:32,173 INFO com.library.Application [main] Started Application in 12.194 seconds (JVM running for 13.421)
+2021-07-26 21:26:29,985 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 3392 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 21:26:29,991 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 21:26:29,992 INFO com.library.Application [main] No active profile set, falling back to default profiles: default
+2021-07-26 21:26:40,781 INFO com.library.Application [main] Started Application in 11.48 seconds (JVM running for 12.676)
+2021-07-26 21:31:03,265 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 11712 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-07-26 21:31:03,267 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-07-26 21:31:03,268 INFO com.library.Application [main] No active profile set, falling back to default profiles: default
+2021-07-26 21:31:14,282 INFO com.library.Application [main] Started Application in 11.668 seconds (JVM running for 12.654)
+2021-07-26 21:32:48,880 INFO com.library.controller.BookController [http-nio-8080-exec-7] showBookPage.
+2021-08-02 19:46:25,710 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 2704 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-02 19:46:25,716 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-02 19:46:25,717 INFO com.library.Application [main] No active profile set, falling back to default profiles: default
+2021-08-02 19:46:40,636 INFO com.library.Application [main] Started Application in 15.995 seconds (JVM running for 17.731)
+2021-08-02 20:46:56,320 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 6628 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-02 20:46:56,327 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-02 20:46:56,328 INFO com.library.Application [main] No active profile set, falling back to default profiles: default
+2021-08-02 20:47:12,370 INFO com.library.Application [main] Started Application in 17.084 seconds (JVM running for 18.633)
+2021-08-02 20:48:58,606 INFO com.library.controller.BookController [http-nio-8080-exec-9] showBookPage.
+2021-08-02 20:49:01,622 INFO com.library.controller.JournalController [http-nio-8080-exec-2] showJournalsPage
+2021-08-02 20:49:04,327 INFO com.library.controller.BookController [http-nio-8080-exec-3] showBookPage.
+2021-08-02 20:49:07,761 INFO com.library.controller.BookController [http-nio-8080-exec-7] showBookPage.
+2021-08-02 20:49:09,729 INFO com.library.controller.JournalController [http-nio-8080-exec-1] showJournalsPage
+2021-08-02 20:49:11,957 INFO com.library.controller.BookController [http-nio-8080-exec-10] showBookPage.
+2021-08-02 20:53:32,781 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 20264 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-02 20:53:32,783 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-02 20:53:32,783 INFO com.library.Application [main] No active profile set, falling back to default profiles: default
+2021-08-02 20:54:30,456 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 16604 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-02 20:54:30,462 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-02 20:54:30,463 INFO com.library.Application [main] The following profiles are active: local
+2021-08-02 20:54:46,036 INFO com.library.Application [main] Started Application in 16.531 seconds (JVM running for 18.057)
+2021-08-02 20:55:37,773 INFO com.library.controller.BookController [http-nio-8080-exec-4] showBookPage.
+2021-08-02 20:56:04,740 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 15288 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-02 20:56:04,748 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-02 20:56:04,749 INFO com.library.Application [main] The following profiles are active: aws
+2021-08-02 20:56:19,405 INFO com.library.Application [main] Started Application in 15.633 seconds (JVM running for 17.157)
+2021-08-02 20:56:35,739 INFO com.library.controller.BookController [http-nio-8080-exec-5] showBookPage.
+2021-08-02 20:56:38,998 INFO com.library.controller.JournalController [http-nio-8080-exec-6] showJournalsPage
+2021-08-02 20:56:42,486 INFO com.library.controller.BookController [http-nio-8080-exec-9] showBookPage.
+2021-08-02 20:57:42,262 INFO com.library.controller.BookController [http-nio-8080-exec-3] showBookPage.
+2021-08-02 20:58:13,714 INFO com.library.controller.BookController [http-nio-8080-exec-10] showBookPage.
+2021-08-02 20:58:16,260 INFO com.library.controller.BookController [http-nio-8080-exec-3] showBookPage.
+2021-08-02 20:59:02,544 INFO com.library.controller.BookController [http-nio-8080-exec-2] showBookPage.
+2021-08-05 20:14:55,402 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 15136 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-05 20:14:55,414 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-05 20:14:55,415 INFO com.library.Application [main] No active profile set, falling back to default profiles: default
+2021-08-05 20:15:44,189 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 15408 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-05 20:15:44,195 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-05 20:15:44,196 INFO com.library.Application [main] The following profiles are active: local
+2021-08-05 20:15:59,485 INFO com.library.Application [main] Started Application in 16.383 seconds (JVM running for 18.016)
+2021-08-05 20:45:39,713 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 8636 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-05 20:45:39,721 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-05 20:45:39,721 INFO com.library.Application [main] The following profiles are active: local
+2021-08-05 20:45:53,548 INFO com.library.Application [main] Started Application in 14.97 seconds (JVM running for 16.813)
+2021-08-08 18:55:03,822 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 10708 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-08 18:55:03,826 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-08 18:55:03,826 INFO com.library.Application [main] The following profiles are active: local
+2021-08-08 18:55:13,130 INFO com.library.Application [main] Started Application in 9.925 seconds (JVM running for 10.997)
+2021-08-08 19:02:07,644 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 6692 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-08 19:02:07,648 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-08 19:02:07,649 INFO com.library.Application [main] The following profiles are active: heroku
+2021-08-08 19:03:03,903 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 9048 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-08 19:03:03,905 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-08 19:03:03,905 INFO com.library.Application [main] The following profiles are active: heroku
+2021-08-08 19:03:12,330 INFO com.library.Application [main] Started Application in 8.523 seconds (JVM running for 9.252)
+2021-08-08 19:06:52,687 INFO com.library.Application [main] Starting Application using Java 11.0.4 on EPUAKYIW3943 with PID 8496 (C:\projects\my-projects\library\build\classes\java\main started by Oleksandr_Yanov1 in C:\projects\my-projects\library)
+2021-08-08 19:06:52,690 DEBUG com.library.Application [main] Running with Spring Boot v2.5.2, Spring v5.3.8
+2021-08-08 19:06:52,690 INFO com.library.Application [main] The following profiles are active: heroku
+2021-08-08 19:07:00,730 INFO com.library.Application [main] Started Application in 8.483 seconds (JVM running for 9.165)
